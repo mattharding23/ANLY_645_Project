@@ -1768,31 +1768,35 @@ pre code {
 
 
 <!-- rnb-text-begin -->
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a>
-Notebook. When you execute code within the notebook, the results appear
-beneath the code.</p>
-<p>Try executing this chunk by clicking the <em>Run</em> button within
-the chunk or by placing your cursor inside it and pressing
-<em>Cmd+Shift+Enter</em>.</p>
+<div id="libraries" class="section level1">
+<h1>Libraries</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KHNwb3RpZnlyKVxuYGBgIn0= -->
+<pre class="r"><code>library(tidyverse)
+library(spotifyr)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the
-toolbar or by pressing <em>Cmd+Option+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and
-output will be saved alongside it (click the <em>Preview</em> button or
-press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the
-editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not
-run any R code chunks. Instead, the output of the chunk when it was last
-run in the editor is displayed.</p>
+</div>
+<div id="spotify-api-credentials" class="section level1">
+<h1>Spotify API Credentials</h1>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGVzZSBhcmUgc3BlY2lmaWMgdG8gdGhpcyBwcm9qZWN0IHNvIHdlIGNhbiBhbGwgdXNlIHRoZW0gXG5TeXMuc2V0ZW52KFNQT1RJRllfQ0xJRU5UX0lEID0gJzBhZmI5MGRiOGMyODQ4MGJhZmQzNWYzNTgyM2E1MzAyJylcblN5cy5zZXRlbnYoU1BPVElGWV9DTElFTlRfU0VDUkVUID0gJ2JmOTgzMmNjOTA0MzQ1OWU5MzlmZjk1MGM0MjliMDZlJylcblxuYWNjZXNzX3Rva2VuIDwtIGdldF9zcG90aWZ5X2FjY2Vzc190b2tlbigpXG5cbmBgYCJ9 -->
+<pre class="r"><code># These are specific to this project so we can all use them 
+Sys.setenv(SPOTIFY_CLIENT_ID = &#39;0afb90db8c28480bafd35f35823a5302&#39;)
+Sys.setenv(SPOTIFY_CLIENT_SECRET = &#39;bf9832cc9043459e939ff950c429b06e&#39;)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgpgYGB7cn0KcGxvdChjYXJzKQpgYGAKCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDbWQrT3B0aW9uK0kqLgoKV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDbWQrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4gCgpUaGUgcHJldmlldyBzaG93cyB5b3UgYSByZW5kZXJlZCBIVE1MIGNvcHkgb2YgdGhlIGNvbnRlbnRzIG9mIHRoZSBlZGl0b3IuIENvbnNlcXVlbnRseSwgdW5saWtlICpLbml0KiwgKlByZXZpZXcqIGRvZXMgbm90IHJ1biBhbnkgUiBjb2RlIGNodW5rcy4gSW5zdGVhZCwgdGhlIG91dHB1dCBvZiB0aGUgY2h1bmsgd2hlbiBpdCB3YXMgbGFzdCBydW4gaW4gdGhlIGVkaXRvciBpcyBkaXNwbGF5ZWQuCgo=</div>
+access_token &lt;- get_spotify_access_token()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBMaWJyYXJpZXMKYGBge3IgbWVzc2FnZT1GQUxTRSx3YXJuaW5nPUZBTFNFfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShzcG90aWZ5cikKYGBgCgojIFNwb3RpZnkgQVBJIENyZWRlbnRpYWxzCmBgYHtyfQojIFRoZXNlIGFyZSBzcGVjaWZpYyB0byB0aGlzIHByb2plY3Qgc28gd2UgY2FuIGFsbCB1c2UgdGhlbSAKU3lzLnNldGVudihTUE9USUZZX0NMSUVOVF9JRCA9ICcwYWZiOTBkYjhjMjg0ODBiYWZkMzVmMzU4MjNhNTMwMicpClN5cy5zZXRlbnYoU1BPVElGWV9DTElFTlRfU0VDUkVUID0gJ2JmOTgzMmNjOTA0MzQ1OWU5MzlmZjk1MGM0MjliMDZlJykKCmFjY2Vzc190b2tlbiA8LSBnZXRfc3BvdGlmeV9hY2Nlc3NfdG9rZW4oKQoKYGBgCgoKCg==</div>
 
 
 
