@@ -5,7 +5,7 @@ library(tidyverse)
 library(spotifyr)
 library(Rspotify)
 library(httr)
-
+library(arrow)
 # ------------------------------------
 # Spotify API Credentials
 # ------------------------------------
@@ -71,12 +71,10 @@ find_related_artists = function(artist_df,multi = FALSE,old_id = NULL){
 # ------------------------------------
 
 # Function that puts together artists twice removed from original artists, by inputting a genre
-artist_relations = function(genre,AT,limit = 50){
+artist_relations = function(artists,AT,limit = 50){
   
   # Get initial artists and clean up data
-  artists = spotifyr::get_genre_artists(genre = genre, market = NULL, limit = limit,
-                                        offset = 0, authorization = get_spotify_access_token()) %>%
-    select(-href,-images,-type,-uri,-external_urls.spotify,-followers.href)
+  
   
   # Get related artists 
   related_artists1 = find_related_artists(artists)
@@ -176,7 +174,7 @@ song_feat = function(top_10){
       song = spotifyr::get_track_audio_features(id) %>%
         select(-type,-id,-uri, -track_href, -analysis_url, -time_signature) 
     }else{
-      song = rep(NA,13)
+      song = rep(NA,12)
     }
     # Combine all song features in one df
     song_features = rbind(song_features,song)
@@ -259,18 +257,24 @@ collaboration = function(all_artists){
 # ------------------------------------
 # Run all functions to output csv files
 # ------------------------------------
-get_spotify_data = function(genre,limit = 50){
-  setwd("..")
-  wd = getwd()
-  all_artist_relations = artist_relations(genre,limit)
+get_spotify_data = function(artist){#,limit = 50){
+  all_artist_relations = artist_relations(artist,limit)
+  print("Artist Relations Complete")
   all_artists = collaboration(all_artist_relations) %>%
-    write_csv(paste0(wd,"/ANLY_645_Project/data/artists_relations.csv"))
-  top_10_songs = get_top_10(all_artists)
+    write_feather(paste0("data/artists_relations_",artist$name[1],".feather"))
+  print("Collaborations Complete")
+  top_10_songs = get_top_10(all_artist_relations)
+  print("Top 10 songs complete")
   top_10_w_feats = song_feat(top_10_songs) %>%
-    write_csv(paste0(wd,"/ANLY_645_Project/data/artists_top_10_songs.csv"))
-  
-  
+    write_feather(paste0("data/artists_top_10_songs_",artist$name[1],".feather"))
+  print("Features of songs complete")
 }
+genre = "rap"
+limit = 50
+
+artists = spotifyr::get_genre_artists(genre = genre, market = NULL, limit = limit,
+                                      offset = 0, authorization = get_spotify_access_token()) %>%
+  select(-href,-images,-type,-uri,-external_urls.spotify,-followers.href)
 # Get data call 
-get_spotify_data("rap",2)
+get_spotify_data(artists[4,])#,2)
 

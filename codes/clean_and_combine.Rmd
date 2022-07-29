@@ -1,0 +1,98 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(arrow)
+
+```
+
+
+```{r}
+relate_drake = arrow::read_feather("data/artists_relations_Drake.feather")
+relate_kanye = arrow::read_feather("data/artists_relations_Kanye West.feather")
+relate_juice = arrow::read_feather("data/artists_relations_Juice WRLD.feather")
+relate_post = arrow::read_feather("data/artists_relations_Post Malone.feather")
+top_drake = arrow::read_feather("data/artists_top_10_songs_Drake.feather")
+top_kanye = arrow::read_feather("data/artists_top_10_songs_Kanye West.feather")
+top_juice = arrow::read_feather("data/artists_top_10_songs_Juice WRLD.feather")
+top_post = arrow::read_feather("data/artists_top_10_songs_Post Malone.feather")
+
+relate = comb(relate_drake,relate_kanye)
+relate = comb(relate,relate_juice)
+relate = comb(relate,relate_post)
+top = comb(top_drake,top_kanye)
+top = comb(top,top_juice)
+top = comb(top,top_post)
+
+```
+```{r}
+comb = function(df1,df2){
+  start = nrow(df1)+1
+  end = start + nrow(df2)
+  count = 1
+  for(i in start:end){
+    df1[i,] = df2[count,]
+    count = count + 1
+  }
+  return(df1)
+}
+
+```
+
+```{r}
+keep_related = function(relate){
+  new_relate = tibble(relate[1,])
+  count = 1
+  kep = TRUE
+  for(i in 2:nrow(relate)){
+    art1 = relate$artist[i]
+    art2 = relate$related_to[i]
+    if (nrow(new_relate) > 0){
+      for(j in 1:nrow(new_relate)){
+        art11 = new_relate$artist[j]
+        art22 = new_relate$related_to[j]
+        if(is.na(art1)){
+          art1 = ""
+        }
+        if(is.na(art11)){
+          art11 = ""
+        }
+        if(is.na(art2)){
+          art2 = ""
+        }
+        if(is.na(art22)){
+          art22 = ""
+        }
+        if(art1 == art11 & art2 == art22)
+          kep = FALSE
+      }
+    }
+    if(kep){
+      new_relate[count,] = relate[i,]
+      count = count + 1
+    }
+    kep = TRUE
+  }
+  return(new_relate)
+}
+relate = keep_related(relate)
+```
+
+```{r}
+top = top %>%
+  unique()
+
+
+```
+
+
+```{r}
+arrow::write_feather(relate,"artists_relations.feather")
+arrow::write_feather(top,"artists_top_10_songs.feather")
+
+
+```
+
