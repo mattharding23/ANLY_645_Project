@@ -11,6 +11,7 @@ library(arrow)
 
 
 ```{r}
+setwd("..")
 relate_drake = arrow::read_feather("data/artists_relations_Drake.feather")
 relate_kanye = arrow::read_feather("data/artists_relations_Kanye West.feather")
 relate_juice = arrow::read_feather("data/artists_relations_Juice WRLD.feather")
@@ -90,8 +91,9 @@ top = top %>%
 
 
 ```{r}
-arrow::write_feather(relate,"artists_relations.feather")
-arrow::write_feather(top,"artists_top_10_songs.feather")
+#setwd("..")
+arrow::write_feather(relate,"data/artists_relations.feather")
+arrow::write_feather(top,"data/artists_top_10_songs.feather")
 
 
 ```
