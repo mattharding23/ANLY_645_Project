@@ -1,0 +1,1441 @@
+edge,edge_weight
+"('Wale', 'Big Sean')",2.0
+"('2 Chainz', 'Big Sean')",5.0
+"('Rick Ross', 'Big Sean')",3.0
+"('Young Money', 'Big Sean')",0.0
+"('ScHoolboy Q', 'Big Sean')",0.0
+"('Meek Mill', 'Big Sean')",3.0
+"('Ace Hood', 'Big Sean')",0.0
+"('French Montana', 'Big Sean')",1.0
+"('Jeremih', 'Big Sean')",2.0
+"('Jay Rock', 'Big Sean')",0.0
+"('Waka Flocka Flame', 'Big Sean')",0.0
+"('Ty Dolla ign', 'Big Sean')",6.0
+"('Mike WiLL Made-It', 'Big Sean')",0.0
+"('YG', 'Big Sean')",0.0
+"('Kid Ink', 'Big Sean')",0.0
+"('Bas', 'Big Sean')",0.0
+"('AAP Ferg', 'Big Sean')",0.0
+"('VIC MENSA', 'Big Sean')",0.0
+"('Juicy J', 'Big Sean')",6.0
+"('B.o.B', 'Big Sean')",0.0
+"('Big Sean', 'J. Cole')",0.0
+"('Wale', 'J. Cole')",0.0
+"('ScHoolboy Q', 'J. Cole')",0.0
+"('Pusha T', 'J. Cole')",0.0
+"('Jay Rock', 'J. Cole')",0.0
+"('Meek Mill', 'J. Cole')",0.0
+"('2 Chainz', 'J. Cole')",4.0
+"('AAP Rocky', 'J. Cole')",0.0
+"('Kid Cudi', 'J. Cole')",0.0
+"('Freddie Gibbs', 'J. Cole')",0.0
+"('Kendrick Lamar', 'J. Cole')",3.0
+"('Nipsey Hussle', 'J. Cole')",0.0
+"('Rick Ross', 'J. Cole')",0.0
+"('Isaiah Rashad', 'J. Cole')",0.0
+"('YG', 'J. Cole')",0.0
+"('Joey Bada', 'J. Cole')",0.0
+"('Chance the Rapper', 'J. Cole')",0.0
+"('Curreny', 'J. Cole')",0.0
+"('Lupe Fiasco', 'J. Cole')",0.0
+"('Miguel', 'J. Cole')",3.0
+"('Rick Ross', 'Meek Mill')",35.0
+"('French Montana', 'Meek Mill')",9.0
+"('DJ Drama', 'Meek Mill')",0.0
+"('Wale', 'Meek Mill')",19.0
+"('Nipsey Hussle', 'Meek Mill')",0.0
+"('Ace Hood', 'Meek Mill')",3.0
+"('2 Chainz', 'Meek Mill')",5.0
+"('Young Money', 'Meek Mill')",0.0
+"('Fabolous', 'Meek Mill')",12.0
+"('Jim Jones', 'Meek Mill')",0.0
+"('Waka Flocka Flame', 'Meek Mill')",0.0
+"('Yo Gotti', 'Meek Mill')",9.0
+"('Pusha T', 'Meek Mill')",4.0
+"('Jay Rock', 'Meek Mill')",0.0
+"('Jeezy', 'Meek Mill')",1.0
+"('Kid Ink', 'Meek Mill')",0.0
+"('Big Sean', 'Meek Mill')",4.0
+"('Juicy J', 'Meek Mill')",0.0
+"('DJ Khaled', 'Meek Mill')",0.0
+"('Jadakiss', 'Meek Mill')",3.0
+"('Young Money', 'DJ Khaled')",0.0
+"('Rick Ross', 'DJ Khaled')",113.0
+"('DJ Drama', 'DJ Khaled')",0.0
+"('Yo Gotti', 'DJ Khaled')",11.0
+"('Birdman', 'DJ Khaled')",31.0
+"('Ace Hood', 'DJ Khaled')",95.0
+"('Fabolous', 'DJ Khaled')",11.0
+"('Plies', 'DJ Khaled')",22.0
+"('T.I.', 'DJ Khaled')",21.0
+"('Kid Ink', 'DJ Khaled')",0.0
+"('French Montana', 'DJ Khaled')",31.0
+"('Jeezy', 'DJ Khaled')",14.0
+"('Wale', 'DJ Khaled')",24.0
+"('T-Pain', 'DJ Khaled')",22.0
+"('2 Chainz', 'DJ Khaled')",24.0
+"('Meek Mill', 'DJ Khaled')",66.0
+"('Waka Flocka Flame', 'DJ Khaled')",8.0
+"('Jim Jones', 'DJ Khaled')",0.0
+"('Tyga', 'DJ Khaled')",12.0
+"('Ty Dolla ign', 'DJ Khaled')",0.0
+"('DJ Drama', 'Rick Ross')",0.0
+"('Ace Hood', 'Rick Ross')",0.0
+"('Young Money', 'Rick Ross')",0.0
+"('Birdman', 'Rick Ross')",0.0
+"('Jim Jones', 'Rick Ross')",0.0
+"('Fabolous', 'Rick Ross')",0.0
+"('Jeezy', 'Rick Ross')",16.0
+"('Juelz Santana', 'Rick Ross')",0.0
+"('Wale', 'Rick Ross')",15.0
+"('Bun B', 'Rick Ross')",0.0
+"('Young Buck', 'Rick Ross')",0.0
+"('Yo Gotti', 'Rick Ross')",8.0
+"('Curreny', 'Rick Ross')",0.0
+"('Slim Thug', 'Rick Ross')",0.0
+"('The Diplomats', 'Rick Ross')",0.0
+"('Young Dro', 'Rick Ross')",0.0
+"('Beanie Sigel', 'Rick Ross')",0.0
+"('Jadakiss', 'Rick Ross')",2.0
+"('Plies', 'Rick Ross')",0.0
+"('Lloyd Banks', 'Rick Ross')",0.0
+"('DJ Drama', 'Wale')",0.0
+"('Rick Ross', 'Wale')",19.0
+"('Fabolous', 'Wale')",3.0
+"('Dom Kennedy', 'Wale')",0.0
+"('Young Money', 'Wale')",0.0
+"('Big K.R.I.T.', 'Wale')",0.0
+"('The-Dream', 'Wale')",0.0
+"('Lloyd', 'Wale')",6.0
+"('August Alsina', 'Wale')",0.0
+"('Nipsey Hussle', 'Wale')",1.0
+"('K CAMP', 'Wale')",0.0
+"('Plies', 'Wale')",0.0
+"('BJ The Chicago Kid', 'Wale')",0.0
+"('Jacquees', 'Wale')",2.0
+"('Big Sean', 'Wale')",6.0
+"('Sevyn Streeter', 'Wale')",0.0
+"('TWENTY88', 'Wale')",0.0
+"('Teyana Taylor', 'Wale')",0.0
+"('Omarion', 'Wale')",0.0
+"('Jadakiss', 'Wale')",0.0
+"('Majid Jordan', 'PARTYNEXTDOOR')",0.0
+"('Bryson Tiller', 'PARTYNEXTDOOR')",0.0
+"('Roy Woods', 'PARTYNEXTDOOR')",0.0
+"('6LACK', 'PARTYNEXTDOOR')",0.0
+"('Yo Trane', 'PARTYNEXTDOOR')",0.0
+"('TYuS', 'PARTYNEXTDOOR')",0.0
+"('PnB Rock', 'PARTYNEXTDOOR')",0.0
+"('dvsn', 'PARTYNEXTDOOR')",0.0
+"('Ramriddlz', 'PARTYNEXTDOOR')",0.0
+"('Ryan Trey', 'PARTYNEXTDOOR')",0.0
+"('TWENTY88', 'PARTYNEXTDOOR')",0.0
+"('Che Ecru', 'PARTYNEXTDOOR')",0.0
+"('ELHAE', 'PARTYNEXTDOOR')",0.0
+"('Tems', 'PARTYNEXTDOOR')",0.0
+"('Miguel', 'PARTYNEXTDOOR')",0.0
+"('Tory Lanez', 'PARTYNEXTDOOR')",0.0
+"('Eli Sostre', 'PARTYNEXTDOOR')",0.0
+"('Vory', 'PARTYNEXTDOOR')",0.0
+"('Jhené Aiko', 'PARTYNEXTDOOR')",0.0
+"('Jeremih', 'PARTYNEXTDOOR')",0.0
+"('DJ Drama', '2 Chainz')",1.0
+"('Juicy J', '2 Chainz')",1.0
+"('Waka Flocka Flame', '2 Chainz')",2.0
+"('Yo Gotti', '2 Chainz')",1.0
+"('Rick Ross', '2 Chainz')",7.0
+"('Young Money', '2 Chainz')",0.0
+"('Jeezy', '2 Chainz')",3.0
+"('Ace Hood', '2 Chainz')",0.0
+"('Birdman', '2 Chainz')",1.0
+"('Big K.R.I.T.', '2 Chainz')",0.0
+"('Jim Jones', '2 Chainz')",0.0
+"('Curreny', '2 Chainz')",0.0
+"('Mike WiLL Made-It', '2 Chainz')",0.0
+"('Wale', '2 Chainz')",3.0
+"('Quavo', '2 Chainz')",4.0
+"('Rich Homie Quan', '2 Chainz')",6.0
+"('Young Scooter', '2 Chainz')",0.0
+"('Zaytoven', '2 Chainz')",0.0
+"('French Montana', '2 Chainz')",2.0
+"('Gucci Mane', '2 Chainz')",3.0
+"('Kid Ink', 'Tory Lanez')",0.0
+"('Bryson Tiller', 'Tory Lanez')",2.0
+"('Ty Dolla ign', 'Tory Lanez')",0.0
+"('French Montana', 'Tory Lanez')",0.0
+"('Meek Mill', 'Tory Lanez')",2.0
+"('August Alsina', 'Tory Lanez')",0.0
+"('Jeremih', 'Tory Lanez')",0.0
+"('6LACK', 'Tory Lanez')",0.0
+"('PARTYNEXTDOOR', 'Tory Lanez')",0.0
+"('Wale', 'Tory Lanez')",0.0
+"('Preme', 'Tory Lanez')",0.0
+"('Roy Woods', 'Tory Lanez')",0.0
+"('PnB Rock', 'Tory Lanez')",2.0
+"('Jacquees', 'Tory Lanez')",0.0
+"('Nipsey Hussle', 'Tory Lanez')",0.0
+"('Trey Songz', 'Tory Lanez')",4.0
+"('Quavo', 'Tory Lanez')",2.0
+"('Vory', 'Tory Lanez')",0.0
+"('Rick Ross', 'Tory Lanez')",0.0
+"('Majid Jordan', 'Tory Lanez')",0.0
+"('Young Thug', 'Future')",38.0
+"('2 Chainz', 'Future')",3.0
+"('Yo Gotti', 'Future')",3.0
+"('Meek Mill', 'Future')",2.0
+"('Gucci Mane', 'Future')",12.0
+"('French Montana', 'Future')",4.0
+"('Chief Keef', 'Future')",0.0
+"('Lil Durk', 'Future')",5.0
+"('Rick Ross', 'Future')",5.0
+"('Young Dolph', 'Future')",1.0
+"('YG', 'Future')",2.0
+"('AAP Ferg', 'Future')",1.0
+"('21 Savage', 'Future')",2.0
+"('Waka Flocka Flame', 'Future')",1.0
+"('Quavo', 'Future')",0.0
+"('Juicy J', 'Future')",7.0
+"('NAV', 'Future')",0.0
+"('Migos', 'Future')",0.0
+"('Gunna', 'Future')",10.0
+"('Lil Yachty', 'Future')",0.0
+"('AAP Mob', 'Young Thug')",0.0
+"('21 Savage', 'Young Thug')",3.0
+"('Quavo', 'Young Thug')",7.0
+"('Gunna', 'Young Thug')",56.0
+"('Migos', 'Young Thug')",11.0
+"('Lil Yachty', 'Young Thug')",0.0
+"('Don Toliver', 'Young Thug')",2.0
+"('AAP Ferg', 'Young Thug')",0.0
+"('Famous Dex', 'Young Thug')",0.0
+"('Kodak Black', 'Young Thug')",0.0
+"('Huncho Jack', 'Young Thug')",0.0
+"('Lil Keed', 'Young Thug')",12.0
+"('SahBabii', 'Young Thug')",0.0
+"('Young Nudy', 'Young Thug')",0.0
+"('NAV', 'Young Thug')",9.0
+"('Rae Sremmurd', 'Young Thug')",0.0
+"('Desiigner', 'Young Thug')",0.0
+"('Pi’erre Bourne', 'Young Thug')",0.0
+"('Mike WiLL Made-It', 'Young Thug')",0.0
+"('UnoTheActivist', 'Young Thug')",0.0
+"('Trey Songz', 'Jeremih')",0.0
+"('Lloyd', 'Jeremih')",0.0
+"('Mario', 'Jeremih')",0.0
+"('Pleasure P', 'Jeremih')",0.0
+"('Pretty Ricky', 'Jeremih')",0.0
+"('Omarion', 'Jeremih')",0.0
+"('The-Dream', 'Jeremih')",0.0
+"('J. Holiday', 'Jeremih')",0.0
+"('Miguel', 'Jeremih')",0.0
+"('T-Pain', 'Jeremih')",0.0
+"('August Alsina', 'Jeremih')",0.0
+"('Sammie', 'Jeremih')",0.0
+"('Keyshia Cole', 'Jeremih')",0.0
+"('Ginuwine', 'Jeremih')",0.0
+"('Jhené Aiko', 'Jeremih')",2.0
+"('Baby Bash', 'Jeremih')",0.0
+"('Young Money', 'Jeremih')",0.0
+"('Bryson Tiller', 'Jeremih')",0.0
+"('Bow Wow', 'Jeremih')",0.0
+"('Bobby V.', 'Jeremih')",0.0
+"('Roy Woods', 'Bryson Tiller')",0.0
+"('PARTYNEXTDOOR', 'Bryson Tiller')",0.0
+"('Majid Jordan', 'Bryson Tiller')",0.0
+"('6LACK', 'Bryson Tiller')",0.0
+"('Yo Trane', 'Bryson Tiller')",0.0
+"('TWENTY88', 'Bryson Tiller')",0.0
+"('Ryan Trey', 'Bryson Tiller')",0.0
+"('PnB Rock', 'Bryson Tiller')",0.0
+"('TYuS', 'Bryson Tiller')",0.0
+"('Jhené Aiko', 'Bryson Tiller')",0.0
+"('Che Ecru', 'Bryson Tiller')",0.0
+"('Tory Lanez', 'Bryson Tiller')",0.0
+"('Jeremih', 'Bryson Tiller')",0.0
+"('Miguel', 'Bryson Tiller')",0.0
+"('DaniLeigh', 'Bryson Tiller')",0.0
+"('DeJ Loaf', 'Bryson Tiller')",0.0
+"('dvsn', 'Bryson Tiller')",0.0
+"('ELHAE', 'Bryson Tiller')",0.0
+"('August Alsina', 'Bryson Tiller')",0.0
+"('Kaash Paige', 'Bryson Tiller')",0.0
+"('Jim Jones', 'French Montana')",3.0
+"('Max B', 'French Montana')",90.0
+"('Meek Mill', 'French Montana')",1.0
+"('Juelz Santana', 'French Montana')",0.0
+"('DJ Drama', 'French Montana')",0.0
+"('Rick Ross', 'French Montana')",42.0
+"('Fabolous', 'French Montana')",7.0
+"('Waka Flocka Flame', 'French Montana')",3.0
+"('The Diplomats', 'French Montana')",0.0
+"('Uncle Murda', 'French Montana')",3.0
+"('Vado', 'French Montana')",2.0
+"('Kid Ink', 'French Montana')",0.0
+"('Ace Hood', 'French Montana')",12.0
+"('Yo Gotti', 'French Montana')",0.0
+"('Jadakiss', 'French Montana')",11.0
+"('Young Money', 'French Montana')",0.0
+"('Styles P', 'French Montana')",1.0
+"('Juicy J', 'French Montana')",21.0
+"('Lloyd Banks', 'French Montana')",3.0
+"('Wale', 'French Montana')",4.0
+"('dvsn', 'Miguel')",0.0
+"('Majid Jordan', 'Miguel')",0.0
+"('TWENTY88', 'Miguel')",0.0
+"('Jhené Aiko', 'Miguel')",0.0
+"('H.E.R.', 'Miguel')",0.0
+"('Brent Faiyaz', 'Miguel')",0.0
+"('Ro James', 'Miguel')",0.0
+"('Syd', 'Miguel')",0.0
+"('Bryson Tiller', 'Miguel')",0.0
+"('PARTYNEXTDOOR', 'Miguel')",0.0
+"('Roy Woods', 'Miguel')",0.0
+"('Jeremih', 'Miguel')",0.0
+"('Xavier Omär', 'Miguel')",0.0
+"('Lloyd', 'Miguel')",0.0
+"('Trey Songz', 'Miguel')",0.0
+"('SiR', 'Miguel')",0.0
+"('Teyana Taylor', 'Miguel')",0.0
+"('The-Dream', 'Miguel')",0.0
+"('Jazmine Sullivan', 'Miguel')",0.0
+"('Keyshia Cole', 'Miguel')",0.0
+"('Quavo', '21 Savage')",2.0
+"('Young Thug', '21 Savage')",6.0
+"('Gunna', '21 Savage')",2.0
+"('Huncho Jack', '21 Savage')",0.0
+"('Metro Boomin', '21 Savage')",114.0
+"('Don Toliver', '21 Savage')",0.0
+"('Sheck Wes', '21 Savage')",0.0
+"('Lil Baby', '21 Savage')",0.0
+"('Lil Keed', '21 Savage')",0.0
+"('Lil Yachty', '21 Savage')",1.0
+"('Trippie Redd', '21 Savage')",0.0
+"('AAP Mob', '21 Savage')",0.0
+"('Migos', '21 Savage')",0.0
+"('88GLAM', '21 Savage')",0.0
+"('NAV', '21 Savage')",0.0
+"('Young Nudy', '21 Savage')",5.0
+"('Flipp Dinero', '21 Savage')",0.0
+"('YG', '21 Savage')",0.0
+"('AAP Ferg', '21 Savage')",0.0
+"('Playboi Carti', '21 Savage')",0.0
+"('Quavo', 'Metro Boomin')",2.0
+"('21 Savage', 'Metro Boomin')",94.0
+"('Sheck Wes', 'Metro Boomin')",0.0
+"('Don Toliver', 'Metro Boomin')",0.0
+"('Huncho Jack', 'Metro Boomin')",0.0
+"('Lil Yachty', 'Metro Boomin')",0.0
+"('Gunna', 'Metro Boomin')",4.0
+"('Young Nudy', 'Metro Boomin')",4.0
+"('NAV', 'Metro Boomin')",30.0
+"('Quality Control', 'Metro Boomin')",0.0
+"('Flipp Dinero', 'Metro Boomin')",0.0
+"('Rich The Kid', 'Metro Boomin')",0.0
+"('Comethazine', 'Metro Boomin')",0.0
+"('SahBabii', 'Metro Boomin')",0.0
+"('88GLAM', 'Metro Boomin')",0.0
+"('Young Thug', 'Metro Boomin')",11.0
+"('Roddy Ricch', 'Metro Boomin')",0.0
+"('Kodak Black', 'Metro Boomin')",2.0
+"('Famous Dex', 'Metro Boomin')",0.0
+"('YBN Nahmir', 'Metro Boomin')",0.0
+"('AAP Ferg', 'Migos')",0.0
+"('YG', 'Migos')",0.0
+"('Desiigner', 'Migos')",0.0
+"('Huncho Jack', 'Migos')",0.0
+"('Rae Sremmurd', 'Migos')",0.0
+"('Young Thug', 'Migos')",16.0
+"('Lil Yachty', 'Migos')",0.0
+"('21 Savage', 'Migos')",2.0
+"('Mike WiLL Made-It', 'Migos')",0.0
+"('Kodak Black', 'Migos')",0.0
+"('Gunna', 'Migos')",0.0
+"('Quality Control', 'Migos')",0.0
+"('AAP Mob', 'Migos')",0.0
+"('Metro Boomin', 'Migos')",0.0
+"('88GLAM', 'Migos')",0.0
+"('Bobby Shmurda', 'Migos')",0.0
+"('Lil Uzi Vert', 'Migos')",2.0
+"('Quavo', 'Migos')",4.0
+"('Famous Dex', 'Migos')",0.0
+"('Young Nudy', 'Migos')",0.0
+"('Kid Ink', 'Ty Dolla ign')",0.0
+"('Tory Lanez', 'Ty Dolla ign')",3.0
+"('Preme', 'Ty Dolla ign')",0.0
+"('August Alsina', 'Ty Dolla ign')",0.0
+"('Wale', 'Ty Dolla ign')",0.0
+"('Jacquees', 'Ty Dolla ign')",0.0
+"('French Montana', 'Ty Dolla ign')",5.0
+"('Young Money', 'Ty Dolla ign')",0.0
+"('Jeremih', 'Ty Dolla ign')",25.0
+"('DJ Drama', 'Ty Dolla ign')",0.0
+"('Mustard', 'Ty Dolla ign')",4.0
+"('Mike WiLL Made-It', 'Ty Dolla ign')",0.0
+"('Eric Bellinger', 'Ty Dolla ign')",0.0
+"('K CAMP', 'Ty Dolla ign')",0.0
+"('Trey Songz', 'Ty Dolla ign')",10.0
+"('2 Chainz', 'Ty Dolla ign')",0.0
+"('Tyga', 'Ty Dolla ign')",0.0
+"('Omarion', 'Ty Dolla ign')",0.0
+"('PnB Rock', 'Ty Dolla ign')",0.0
+"('Roy Woods', 'Ty Dolla ign')",0.0
+"('Young Money', 'Lil Wayne')",1.0
+"('Rick Ross', 'Lil Wayne')",8.0
+"('Birdman', 'Lil Wayne')",53.0
+"('Yo Gotti', 'Lil Wayne')",1.0
+"('Waka Flocka Flame', 'Lil Wayne')",0.0
+"('Jeezy', 'Lil Wayne')",2.0
+"('T.I.', 'Lil Wayne')",0.0
+"('Gucci Mane', 'Lil Wayne')",2.0
+"('2 Chainz', 'Lil Wayne')",25.0
+"('Plies', 'Lil Wayne')",0.0
+"('Juicy J', 'Lil Wayne')",9.0
+"('Wale', 'Lil Wayne')",0.0
+"('Meek Mill', 'Lil Wayne')",0.0
+"('Ace Hood', 'Lil Wayne')",0.0
+"('DJ Drama', 'Lil Wayne')",0.0
+"('Fabolous', 'Lil Wayne')",7.0
+"('Big Sean', 'Lil Wayne')",10.0
+"('French Montana', 'Lil Wayne')",2.0
+"('Mike Jones', 'Lil Wayne')",0.0
+"('DJ Khaled', 'Lil Wayne')",0.0
+"('Pusha T', 'Kanye West')",8.0
+"('Kid Cudi', 'Kanye West')",5.0
+"('Big Sean', 'Kanye West')",1.0
+"('AAP Rocky', 'Kanye West')",0.0
+"('J. Cole', 'Kanye West')",0.0
+"('ScHoolboy Q', 'Kanye West')",0.0
+"('Frank Ocean', 'Kanye West')",16.0
+"('Joey Bada', 'Kanye West')",0.0
+"('Childish Gambino', 'Kanye West')",0.0
+"('Earl Sweatshirt', 'Kanye West')",0.0
+"('Chance the Rapper', 'Kanye West')",0.0
+"('Lupe Fiasco', 'Kanye West')",4.0
+"('JAY-Z', 'Kanye West')",123.0
+"('KIDS SEE GHOSTS', 'Kanye West')",14.0
+"('Vince Staples', 'Kanye West')",0.0
+"('BROCKHAMPTON', 'Kanye West')",0.0
+"('Freddie Gibbs', 'Kanye West')",0.0
+"('Baby Keem', 'Kanye West')",0.0
+"('Isaiah Rashad', 'Kanye West')",0.0
+"('2 Chainz', 'Kanye West')",0.0
+"('Freddie Gibbs', 'Pusha T')",0.0
+"('Curreny', 'Pusha T')",0.0
+"('Big K.R.I.T.', 'Pusha T')",0.0
+"('Clipse', 'Pusha T')",7.0
+"('CyHi', 'Pusha T')",0.0
+"('Jay Electronica', 'Pusha T')",0.0
+"('Smoke DZA', 'Pusha T')",0.0
+"('Ab-Soul', 'Pusha T')",0.0
+"('Boldy James', 'Pusha T')",0.0
+"('Danny Brown', 'Pusha T')",0.0
+"('Earl Sweatshirt', 'Pusha T')",0.0
+"('Jay Rock', 'Pusha T')",0.0
+"('Vince Staples', 'Pusha T')",0.0
+"('The Cool Kids', 'Pusha T')",0.0
+"('Lupe Fiasco', 'Pusha T')",0.0
+"('Action Bronson', 'Pusha T')",0.0
+"('The Alchemist', 'Pusha T')",0.0
+"('Benny The Butcher', 'Pusha T')",0.0
+"('Rick Ross', 'Pusha T')",6.0
+"('ScHoolboy Q', 'Pusha T')",0.0
+"('WZRD', 'Kid Cudi')",2.0
+"('Pusha T', 'Kid Cudi')",2.0
+"('Lupe Fiasco', 'Kid Cudi')",0.0
+"('Earl Sweatshirt', 'Kid Cudi')",0.0
+"('ScHoolboy Q', 'Kid Cudi')",0.0
+"('AAP Rocky', 'Kid Cudi')",2.0
+"('Big Sean', 'Kid Cudi')",0.0
+"('Vince Staples', 'Kid Cudi')",0.0
+"('AAP Mob', 'Kid Cudi')",0.0
+"('Joey Bada', 'Kid Cudi')",0.0
+"('Isaiah Rashad', 'Kid Cudi')",0.0
+"('Bas', 'Kid Cudi')",0.0
+"('Mac Miller', 'Kid Cudi')",0.0
+"('Chance the Rapper', 'Kid Cudi')",0.0
+"('Freddie Gibbs', 'Kid Cudi')",0.0
+"('Jay Rock', 'Kid Cudi')",0.0
+"('Denzel Curry', 'Kid Cudi')",0.0
+"('KIDS SEE GHOSTS', 'Kid Cudi')",14.0
+"('Young Ratoo', 'Kid Cudi')",0.0
+"('Childish Gambino', 'Kid Cudi')",0.0
+"('Earl Sweatshirt', 'AAP Rocky')",0.0
+"('Vince Staples', 'AAP Rocky')",0.0
+"('Flatbush Zombies', 'AAP Rocky')",0.0
+"('Pusha T', 'AAP Rocky')",0.0
+"('ScHoolboy Q', 'AAP Rocky')",6.0
+"('Joey Bada', 'AAP Rocky')",2.0
+"('Danny Brown', 'AAP Rocky')",2.0
+"('Freddie Gibbs', 'AAP Rocky')",0.0
+"('Ab-Soul', 'AAP Rocky')",0.0
+"('AAP Mob', 'AAP Rocky')",0.0
+"('Jay Rock', 'AAP Rocky')",0.0
+"('Curreny', 'AAP Rocky')",0.0
+"('Isaiah Rashad', 'AAP Rocky')",0.0
+"('AAP Ferg', 'AAP Rocky')",1.0
+"('Chief Keef', 'AAP Rocky')",0.0
+"('Denzel Curry', 'AAP Rocky')",0.0
+"('JPEGMAFIA', 'AAP Rocky')",0.0
+"('Juicy J', 'AAP Rocky')",6.0
+"('Action Bronson', 'AAP Rocky')",2.0
+"('2 Chainz', 'AAP Rocky')",2.0
+"('Ab-Soul', 'ScHoolboy Q')",2.0
+"('Freddie Gibbs', 'ScHoolboy Q')",0.0
+"('Dom Kennedy', 'ScHoolboy Q')",1.0
+"('Danny Brown', 'ScHoolboy Q')",0.0
+"('Flatbush Zombies', 'ScHoolboy Q')",0.0
+"('Black Hippy', 'ScHoolboy Q')",1.0
+"('Big K.R.I.T.', 'ScHoolboy Q')",0.0
+"('Vince Staples', 'ScHoolboy Q')",2.0
+"('Isaiah Rashad', 'ScHoolboy Q')",0.0
+"('Jay Rock', 'ScHoolboy Q')",5.0
+"('Smoke DZA', 'ScHoolboy Q')",0.0
+"('Curreny', 'ScHoolboy Q')",0.0
+"('AAP Twelvyy', 'ScHoolboy Q')",0.0
+"('Boldy James', 'ScHoolboy Q')",0.0
+"('Pusha T', 'ScHoolboy Q')",0.0
+"('AAP Rocky', 'ScHoolboy Q')",1.0
+"('Action Bronson', 'ScHoolboy Q')",0.0
+"('Dizzy Wright', 'ScHoolboy Q')",0.0
+"('Joey Bada', 'ScHoolboy Q')",0.0
+"('Earl Sweatshirt', 'ScHoolboy Q')",0.0
+"('Earl Sweatshirt', 'Frank Ocean')",1.0
+"('Childish Gambino', 'Frank Ocean')",0.0
+"('Tyler The Creator', 'Frank Ocean')",0.0
+"('AAP Rocky', 'Frank Ocean')",0.0
+"('Vince Staples', 'Frank Ocean')",0.0
+"('Pusha T', 'Frank Ocean')",0.0
+"('Odd Future', 'Frank Ocean')",0.0
+"('BROCKHAMPTON', 'Frank Ocean')",0.0
+"('Kevin Abstract', 'Frank Ocean')",0.0
+"('Miguel', 'Frank Ocean')",0.0
+"('Mac Miller', 'Frank Ocean')",0.0
+"('The Internet', 'Frank Ocean')",0.0
+"('Joey Bada', 'Frank Ocean')",0.0
+"('Jhené Aiko', 'Frank Ocean')",0.0
+"('JPEGMAFIA', 'Frank Ocean')",0.0
+"('Freddie Gibbs', 'Frank Ocean')",0.0
+"('Isaiah Rashad', 'Frank Ocean')",0.0
+"('Solange', 'Frank Ocean')",0.0
+"('Pharrell Williams', 'Frank Ocean')",0.0
+"('Chance the Rapper', 'Frank Ocean')",0.0
+"('Flatbush Zombies', 'Joey Bada')",13.0
+"('Ab-Soul', 'Joey Bada')",0.0
+"('Vince Staples', 'Joey Bada')",0.0
+"('Danny Brown', 'Joey Bada')",0.0
+"('Earl Sweatshirt', 'Joey Bada')",0.0
+"('Freddie Gibbs', 'Joey Bada')",0.0
+"('Domo Genesis', 'Joey Bada')",0.0
+"('Action Bronson', 'Joey Bada')",2.0
+"('The Alchemist', 'Joey Bada')",0.0
+"('AAP Rocky', 'Joey Bada')",0.0
+"('The Underachievers', 'Joey Bada')",3.0
+"('Isaiah Rashad', 'Joey Bada')",0.0
+"('Boldy James', 'Joey Bada')",0.0
+"('ScHoolboy Q', 'Joey Bada')",2.0
+"('Mick Jenkins', 'Joey Bada')",0.0
+"('Chance the Rapper', 'Joey Bada')",0.0
+"('Pusha T', 'Joey Bada')",0.0
+"('AAP Twelvyy', 'Joey Bada')",0.0
+"('Denzel Curry', 'Joey Bada')",0.0
+"('Curreny', 'Joey Bada')",0.0
+"('Earl Sweatshirt', 'Childish Gambino')",0.0
+"('Frank Ocean', 'Childish Gambino')",0.0
+"('Tyler The Creator', 'Childish Gambino')",0.0
+"('AAP Rocky', 'Childish Gambino')",0.0
+"('Vince Staples', 'Childish Gambino')",0.0
+"('Pusha T', 'Childish Gambino')",0.0
+"('Chance the Rapper', 'Childish Gambino')",2.0
+"('Odd Future', 'Childish Gambino')",0.0
+"('Mac Miller', 'Childish Gambino')",0.0
+"('Joey Bada', 'Childish Gambino')",0.0
+"('Isaiah Rashad', 'Childish Gambino')",0.0
+"('BROCKHAMPTON', 'Childish Gambino')",0.0
+"('ScHoolboy Q', 'Childish Gambino')",0.0
+"('N.E.R.D', 'Childish Gambino')",0.0
+"('Spillage Village', 'Childish Gambino')",0.0
+"('Kevin Abstract', 'Childish Gambino')",0.0
+"('WZRD', 'Childish Gambino')",0.0
+"('Freddie Gibbs', 'Childish Gambino')",0.0
+"('The Internet', 'Childish Gambino')",0.0
+"('Kid Cudi', 'Childish Gambino')",0.0
+"('MellowHype', 'Earl Sweatshirt')",0.0
+"('Domo Genesis', 'Earl Sweatshirt')",2.0
+"('Vince Staples', 'Earl Sweatshirt')",4.0
+"('Mike G', 'Earl Sweatshirt')",0.0
+"('Danny Brown', 'Earl Sweatshirt')",0.0
+"('Odd Future', 'Earl Sweatshirt')",0.0
+"('Lil B', 'Earl Sweatshirt')",0.0
+"('SpaceGhostPurrp', 'Earl Sweatshirt')",0.0
+"('Death Grips', 'Earl Sweatshirt')",0.0
+"('Tyler The Creator', 'Earl Sweatshirt')",2.0
+"('Freddie Gibbs', 'Earl Sweatshirt')",0.0
+"('MellowHigh', 'Earl Sweatshirt')",0.0
+"('Casey Veggies', 'Earl Sweatshirt')",1.0
+"('BADBADNOTGOOD', 'Earl Sweatshirt')",0.0
+"('Jet Age of Tomorrow', 'Earl Sweatshirt')",0.0
+"('JPEGMAFIA', 'Earl Sweatshirt')",0.0
+"('King Geedorah', 'Earl Sweatshirt')",0.0
+"('Action Bronson', 'Earl Sweatshirt')",0.0
+"('Ab-Soul', 'Earl Sweatshirt')",0.0
+"('Madvillain', 'Earl Sweatshirt')",0.0
+"('Donnie Trumpet  The Social Experiment', 'Chance the Rapper')",0.0
+"('Ab-Soul', 'Chance the Rapper')",1.0
+"('Joey Bada', 'Chance the Rapper')",0.0
+"('Vince Staples', 'Chance the Rapper')",0.0
+"('Mick Jenkins', 'Chance the Rapper')",0.0
+"('Earl Sweatshirt', 'Chance the Rapper')",0.0
+"('Noname', 'Chance the Rapper')",2.0
+"('Aminé', 'Chance the Rapper')",0.0
+"('Shelley FKA DRAM', 'Chance the Rapper')",0.0
+"('BJ The Chicago Kid', 'Chance the Rapper')",3.0
+"('Phony Ppl', 'Chance the Rapper')",0.0
+"('Flatbush Zombies', 'Chance the Rapper')",0.0
+"('Domo Genesis', 'Chance the Rapper')",0.0
+"('ScHoolboy Q', 'Chance the Rapper')",0.0
+"('Saba', 'Chance the Rapper')",2.0
+"('Isaiah Rashad', 'Chance the Rapper')",0.0
+"('Joey Purp', 'Chance the Rapper')",0.0
+"('Taylor Bennett', 'Chance the Rapper')",2.0
+"('Freddie Gibbs', 'Chance the Rapper')",0.0
+"('Danny Brown', 'Chance the Rapper')",0.0
+"('Jay Electronica', 'Lupe Fiasco')",0.0
+"('Clipse', 'Lupe Fiasco')",0.0
+"('The Cool Kids', 'Lupe Fiasco')",0.0
+"('Talib Kweli', 'Lupe Fiasco')",15.0
+"('Big K.R.I.T.', 'Lupe Fiasco')",3.0
+"('Asher Roth', 'Lupe Fiasco')",0.0
+"('Blu', 'Lupe Fiasco')",0.0
+"('Royce Da 5\'9""', 'Lupe Fiasco')",0.0
+"('Big Boi', 'Lupe Fiasco')",0.0
+"('Black Star', 'Lupe Fiasco')",0.0
+"('Common', 'Lupe Fiasco')",0.0
+"('Little Brother', 'Lupe Fiasco')",0.0
+"('CyHi', 'Lupe Fiasco')",0.0
+"('Mos Def', 'Lupe Fiasco')",0.0
+"('Black Thought', 'Lupe Fiasco')",0.0
+"('Curreny', 'Lupe Fiasco')",0.0
+"('Elzhi', 'Lupe Fiasco')",0.0
+"('Joe Budden', 'Lupe Fiasco')",0.0
+"('The Roots', 'Lupe Fiasco')",0.0
+"('N.E.R.D', 'Lupe Fiasco')",0.0
+"('Nas', 'JAY-Z')",4.0
+"('Fat Joe', 'JAY-Z')",0.0
+"('The Carters', 'JAY-Z')",0.0
+"('Cam’ron', 'JAY-Z')",0.0
+"('Kanye West', 'JAY-Z')",125.0
+"('Beanie Sigel', 'JAY-Z')",33.0
+"('Fabolous', 'JAY-Z')",0.0
+"('Memphis Bleek', 'JAY-Z')",36.0
+"('Eminem', 'JAY-Z')",4.0
+"('Rick Ross', 'JAY-Z')",5.0
+"('Foxy Brown', 'JAY-Z')",9.0
+"('The LOX', 'JAY-Z')",2.0
+"('DMX', 'JAY-Z')",2.0
+"('Busta Rhymes', 'JAY-Z')",0.0
+"('Diddy', 'JAY-Z')",2.0
+"('Jadakiss', 'JAY-Z')",0.0
+"('The Notorious B.I.G.', 'JAY-Z')",12.0
+"('Big Pun', 'JAY-Z')",0.0
+"('Method Man', 'JAY-Z')",0.0
+"('Mobb Deep', 'JAY-Z')",0.0
+"('WZRD', 'KIDS SEE GHOSTS')",0.0
+"('JPEGMAFIA', 'KIDS SEE GHOSTS')",0.0
+"('Danny Brown', 'KIDS SEE GHOSTS')",0.0
+"('Injury Reserve', 'KIDS SEE GHOSTS')",0.0
+"('Earl Sweatshirt', 'KIDS SEE GHOSTS')",0.0
+"('JulezJZ', 'KIDS SEE GHOSTS')",0.0
+"('Pusha T', 'KIDS SEE GHOSTS')",2.0
+"('Westside Gunn', 'KIDS SEE GHOSTS')",0.0
+"('redveil', 'KIDS SEE GHOSTS')",0.0
+"('KayCyy', 'KIDS SEE GHOSTS')",0.0
+"('Freddie Gibbs', 'KIDS SEE GHOSTS')",0.0
+"('Death Grips', 'KIDS SEE GHOSTS')",0.0
+"('Denzel Curry', 'KIDS SEE GHOSTS')",0.0
+"('070 Shake', 'KIDS SEE GHOSTS')",0.0
+"('Madvillain', 'KIDS SEE GHOSTS')",0.0
+"('Young Ratoo', 'KIDS SEE GHOSTS')",0.0
+"('Saba', 'KIDS SEE GHOSTS')",0.0
+"('Vince Staples', 'KIDS SEE GHOSTS')",0.0
+"('Jay Electronica', 'KIDS SEE GHOSTS')",0.0
+"('billy woods', 'KIDS SEE GHOSTS')",0.0
+"('Domo Genesis', 'Vince Staples')",0.0
+"('Earl Sweatshirt', 'Vince Staples')",0.0
+"('Casey Veggies', 'Vince Staples')",0.0
+"('Danny Brown', 'Vince Staples')",0.0
+"('Flatbush Zombies', 'Vince Staples')",0.0
+"('Denzel Curry', 'Vince Staples')",0.0
+"('MellowHigh', 'Vince Staples')",0.0
+"('Freddie Gibbs', 'Vince Staples')",0.0
+"('Joey Bada', 'Vince Staples')",0.0
+"('Ab-Soul', 'Vince Staples')",0.0
+"('Boldy James', 'Vince Staples')",0.0
+"('Isaiah Rashad', 'Vince Staples')",0.0
+"('JPEGMAFIA', 'Vince Staples')",0.0
+"('Action Bronson', 'Vince Staples')",0.0
+"('Big K.R.I.T.', 'Vince Staples')",0.0
+"('ScHoolboy Q', 'Vince Staples')",0.0
+"('Lil B', 'Vince Staples')",0.0
+"('Mick Jenkins', 'Vince Staples')",0.0
+"('VRITRA', 'Vince Staples')",0.0
+"('Kilo Kish', 'Vince Staples')",5.0
+"('Kevin Abstract', 'BROCKHAMPTON')",0.0
+"('JPEGMAFIA', 'BROCKHAMPTON')",2.0
+"('Ameer Vann', 'BROCKHAMPTON')",0.0
+"('Injury Reserve', 'BROCKHAMPTON')",0.0
+"('Aminé', 'BROCKHAMPTON')",0.0
+"('Duckwrth', 'BROCKHAMPTON')",0.0
+"('Choker', 'BROCKHAMPTON')",0.0
+"('070 Shake', 'BROCKHAMPTON')",0.0
+"('Tierra Whack', 'BROCKHAMPTON')",0.0
+"('Yeek', 'BROCKHAMPTON')",0.0
+"('slowthai', 'BROCKHAMPTON')",0.0
+"('Saba', 'BROCKHAMPTON')",0.0
+"('IDK', 'BROCKHAMPTON')",0.0
+"('Jaden', 'BROCKHAMPTON')",0.0
+"('Smino', 'BROCKHAMPTON')",0.0
+"('Isaiah Rashad', 'BROCKHAMPTON')",0.0
+"('Earl Sweatshirt', 'BROCKHAMPTON')",0.0
+"('Vince Staples', 'BROCKHAMPTON')",0.0
+"('Noname', 'BROCKHAMPTON')",0.0
+"('Kenny Mason', 'BROCKHAMPTON')",0.0
+"('Big K.R.I.T.', 'Freddie Gibbs')",0.0
+"('Smoke DZA', 'Freddie Gibbs')",1.0
+"('Curreny', 'Freddie Gibbs')",9.0
+"('Ab-Soul', 'Freddie Gibbs')",5.0
+"('Clipse', 'Freddie Gibbs')",0.0
+"('Boldy James', 'Freddie Gibbs')",0.0
+"('Jay Electronica', 'Freddie Gibbs')",0.0
+"('Danny Brown', 'Freddie Gibbs')",2.0
+"('The Alchemist', 'Freddie Gibbs')",19.0
+"('Earl Sweatshirt', 'Freddie Gibbs')",5.0
+"('Pusha T', 'Freddie Gibbs')",1.0
+"('Action Bronson', 'Freddie Gibbs')",0.0
+"('Roc Marciano', 'Freddie Gibbs')",0.0
+"('Jay Rock', 'Freddie Gibbs')",1.0
+"('Domo Genesis', 'Freddie Gibbs')",7.0
+"('Blu', 'Freddie Gibbs')",0.0
+"('Dom Kennedy', 'Freddie Gibbs')",1.0
+"('Statik Selektah', 'Freddie Gibbs')",1.0
+"('The Cool Kids', 'Freddie Gibbs')",0.0
+"('CyHi', 'Freddie Gibbs')",0.0
+"('Pi’erre Bourne', 'Baby Keem')",0.0
+"('redveil', 'Baby Keem')",0.0
+"('Aaron May', 'Baby Keem')",0.0
+"('IDK', 'Baby Keem')",0.0
+"('Young Stoner Life', 'Baby Keem')",0.0
+"('Isaiah Rashad', 'Baby Keem')",0.0
+"('Young Nudy', 'Baby Keem')",0.0
+"('JID', 'Baby Keem')",0.0
+"('LUCKI', 'Baby Keem')",0.0
+"('Metro Boomin', 'Baby Keem')",0.0
+"('AAP Mob', 'Baby Keem')",0.0
+"('Mike Dimes', 'Baby Keem')",0.0
+"('NOT', 'Baby Keem')",0.0
+"('Lil Yachty', 'Baby Keem')",0.0
+"('Smino', 'Baby Keem')",0.0
+"('Ben Reilly', 'Baby Keem')",0.0
+"('MadeinTYO', 'Baby Keem')",0.0
+"('Saba', 'Baby Keem')",0.0
+"('Ken Carson', 'Baby Keem')",0.0
+"('Dreamville', 'Baby Keem')",0.0
+"('Mick Jenkins', 'Isaiah Rashad')",0.0
+"('Saba', 'Isaiah Rashad')",0.0
+"('Ab-Soul', 'Isaiah Rashad')",0.0
+"('Kirk Knight', 'Isaiah Rashad')",0.0
+"('Childish Major', 'Isaiah Rashad')",0.0
+"('Domo Genesis', 'Isaiah Rashad')",0.0
+"('Freddie Gibbs', 'Isaiah Rashad')",0.0
+"('Rejjie Snow', 'Isaiah Rashad')",0.0
+"('Vince Staples', 'Isaiah Rashad')",0.0
+"('Smino', 'Isaiah Rashad')",3.0
+"('Erick the Architect', 'Isaiah Rashad')",0.0
+"('REASON', 'Isaiah Rashad')",0.0
+"('AAP Twelvyy', 'Isaiah Rashad')",0.0
+"('Noname', 'Isaiah Rashad')",0.0
+"('Lute', 'Isaiah Rashad')",0.0
+"('Flatbush Zombies', 'Isaiah Rashad')",0.0
+"('Joey Bada', 'Isaiah Rashad')",0.0
+"('IDK', 'Isaiah Rashad')",0.0
+"('Kota the Friend', 'Isaiah Rashad')",0.0
+"('GoldLink', 'Isaiah Rashad')",0.0
+"('Flipp Dinero', 'NAV')",0.0
+"('YBN Nahmir', 'NAV')",0.0
+"('PnB Rock', 'NAV')",0.0
+"('Quality Control', 'NAV')",0.0
+"('Quavo', 'NAV')",6.0
+"('Lil Yachty', 'NAV')",0.0
+"('Yung Pinch', 'NAV')",0.0
+"('Rich The Kid', 'NAV')",0.0
+"('Tee Grizzley', 'NAV')",0.0
+"('88GLAM', 'NAV')",2.0
+"('Lil Mosey', 'NAV')",0.0
+"('SahBabii', 'NAV')",4.0
+"('Lil Gnar', 'NAV')",0.0
+"('Metro Boomin', 'NAV')",30.0
+"('YNW Melly', 'NAV')",0.0
+"('Nebu Kiniza', 'NAV')",0.0
+"('Roddy Ricch', 'NAV')",0.0
+"('Famous Dex', 'NAV')",0.0
+"('Ugly God', 'NAV')",0.0
+"('Comethazine', 'NAV')",0.0
+"('Tay-K', 'Comethazine')",0.0
+"('Lil Gnar', 'Comethazine')",0.0
+"('YBN Nahmir', 'Comethazine')",0.0
+"('Famous Dex', 'Comethazine')",0.0
+"('Lil Yachty', 'Comethazine')",1.0
+"('Ugly God', 'Comethazine')",1.0
+"('Kid Trunks', 'Comethazine')",0.0
+"('Almighty Jay', 'Comethazine')",0.0
+"('Yung Bans', 'Comethazine')",0.0
+"('Blueface', 'Comethazine')",0.0
+"('Trippie Redd', 'Comethazine')",0.0
+"('D. Savage', 'Comethazine')",0.0
+"('Sheck Wes', 'Comethazine')",0.0
+"('UnoTheActivist', 'Comethazine')",0.0
+"('Flipp Dinero', 'Comethazine')",0.0
+"('Young Nudy', 'Comethazine')",0.0
+"('Cooliecut', 'Comethazine')",0.0
+"('NOT', 'Comethazine')",0.0
+"('Matt Ox', 'Comethazine')",0.0
+"('Craig Xen', 'Comethazine')",0.0
+"('Tay-K', 'Lil Yachty')",0.0
+"('Famous Dex', 'Lil Yachty')",2.0
+"('YBN Nahmir', 'Lil Yachty')",0.0
+"('Ugly God', 'Lil Yachty')",2.0
+"('Comethazine', 'Lil Yachty')",0.0
+"('Yung Bans', 'Lil Yachty')",0.0
+"('SahBabii', 'Lil Yachty')",0.0
+"('Quality Control', 'Lil Yachty')",0.0
+"('Sheck Wes', 'Lil Yachty')",0.0
+"('AAP Mob', 'Lil Yachty')",0.0
+"('Lil Pump', 'Lil Yachty')",1.0
+"('Lil Gnar', 'Lil Yachty')",0.0
+"('UnoTheActivist', 'Lil Yachty')",0.0
+"('Young Nudy', 'Lil Yachty')",1.0
+"('Huncho Jack', 'Lil Yachty')",0.0
+"('D. Savage', 'Lil Yachty')",0.0
+"('Jay Critch', 'Lil Yachty')",0.0
+"('Pi’erre Bourne', 'Lil Yachty')",0.0
+"('Quavo', 'Lil Yachty')",3.0
+"('Rich The Kid', 'Lil Yachty')",1.0
+"('Tee Grizzley', 'Kodak Black')",0.0
+"('Roddy Ricch', 'Kodak Black')",0.0
+"('NAV', 'Kodak Black')",0.0
+"('YoungBoy Never Broke Again', 'Kodak Black')",0.0
+"('Young Nudy', 'Kodak Black')",0.0
+"('YNW Melly', 'Kodak Black')",0.0
+"('Blueface', 'Kodak Black')",0.0
+"('Lil Yachty', 'Kodak Black')",2.0
+"('Gunna', 'Kodak Black')",0.0
+"('Famous Dex', 'Kodak Black')",0.0
+"('Metro Boomin', 'Kodak Black')",0.0
+"('YBN Nahmir', 'Kodak Black')",0.0
+"('PnB Rock', 'Kodak Black')",1.0
+"('Young Thug', 'Kodak Black')",2.0
+"('SahBabii', 'Kodak Black')",0.0
+"('Quavo', 'Kodak Black')",0.0
+"('Tay-K', 'Kodak Black')",0.0
+"('Rich The Kid', 'Kodak Black')",0.0
+"('Quando Rondo', 'Kodak Black')",0.0
+"('Moneybagg Yo', 'Kodak Black')",0.0
+"('Comethazine', 'Trippie Redd')",0.0
+"('Polo G', 'Trippie Redd')",2.0
+"('Tay-K', 'Trippie Redd')",0.0
+"('NAV', 'Trippie Redd')",0.0
+"('Lil Yachty', 'Trippie Redd')",3.0
+"('Yung Pinch', 'Trippie Redd')",0.0
+"('Flipp Dinero', 'Trippie Redd')",0.0
+"('Lil Gnar', 'Trippie Redd')",0.0
+"('YNW Melly', 'Trippie Redd')",3.0
+"('Lil Tecca', 'Trippie Redd')",1.0
+"('Cordae', 'Trippie Redd')",0.0
+"('YBN Nahmir', 'Trippie Redd')",0.0
+"('Lil Uzi Vert', 'Trippie Redd')",2.0
+"('Famous Dex', 'Trippie Redd')",1.0
+"('Kid Trunks', 'Trippie Redd')",0.0
+"('Lil Mosey', 'Trippie Redd')",7.0
+"('Young Nudy', 'Trippie Redd')",0.0
+"('21 Savage', 'Trippie Redd')",0.0
+"('Yung Bans', 'Trippie Redd')",0.0
+"('Gunna', 'Trippie Redd')",0.0
+"('YNW Melly', 'Lil Tecca')",0.0
+"('Roddy Ricch', 'Lil Tecca')",0.0
+"('Blueface', 'Lil Tecca')",0.0
+"('DaBaby', 'Lil Tecca')",0.0
+"('Lil Mosey', 'Lil Tecca')",0.0
+"('Scorey', 'Lil Tecca')",0.0
+"('Flipp Dinero', 'Lil Tecca')",0.0
+"('YK Osiris', 'Lil Tecca')",0.0
+"('NAV', 'Lil Tecca')",6.0
+"('Comethazine', 'Lil Tecca')",0.0
+"('Cordae', 'Lil Tecca')",0.0
+"('YoungBoy Never Broke Again', 'Lil Tecca')",0.0
+"('PnB Rock', 'Lil Tecca')",0.0
+"('Trippie Redd', 'Lil Tecca')",4.0
+"('Pi’erre Bourne', 'Lil Tecca')",0.0
+"('24kGoldn', 'Lil Tecca')",0.0
+"('Luh Kel', 'Lil Tecca')",0.0
+"('Yeat', 'Lil Tecca')",0.0
+"('Quando Rondo', 'Lil Tecca')",0.0
+"('Polo G', 'Lil Tecca')",2.0
+"('YNW Melly', 'Lil Mosey')",0.0
+"('Flipp Dinero', 'Lil Mosey')",0.0
+"('Almighty Jay', 'Lil Mosey')",0.0
+"('Blueface', 'Lil Mosey')",0.0
+"('YBN Nahmir', 'Lil Mosey')",0.0
+"('Comethazine', 'Lil Mosey')",0.0
+"('NAV', 'Lil Mosey')",0.0
+"('Lil Tecca', 'Lil Mosey')",0.0
+"('Yung Pinch', 'Lil Mosey')",0.0
+"('Lil Gnar', 'Lil Mosey')",0.0
+"('Nebu Kiniza', 'Lil Mosey')",0.0
+"('Landon Cube', 'Lil Mosey')",0.0
+"('DaBaby', 'Lil Mosey')",0.0
+"('PnB Rock', 'Lil Mosey')",0.0
+"('YK Osiris', 'Lil Mosey')",0.0
+"('iann dior', 'Lil Mosey')",0.0
+"('Scorey', 'Lil Mosey')",0.0
+"('Tee Grizzley', 'Lil Mosey')",0.0
+"('Tyla Yaweh', 'Lil Mosey')",0.0
+"('Famous Dex', 'Lil Mosey')",0.0
+"('Blueface', 'YNW Melly')",0.0
+"('Roddy Ricch', 'YNW Melly')",0.0
+"('YK Osiris', 'YNW Melly')",0.0
+"('Lil Tecca', 'YNW Melly')",0.0
+"('Lil Mosey', 'YNW Melly')",0.0
+"('Quando Rondo', 'YNW Melly')",0.0
+"('Flipp Dinero', 'YNW Melly')",0.0
+"('Scorey', 'YNW Melly')",0.0
+"('YoungBoy Never Broke Again', 'YNW Melly')",0.0
+"('DaBaby', 'YNW Melly')",0.0
+"('NAV', 'YNW Melly')",0.0
+"('Tee Grizzley', 'YNW Melly')",2.0
+"('PnB Rock', 'YNW Melly')",0.0
+"('Polo G', 'YNW Melly')",0.0
+"('YBN Nahmir', 'YNW Melly')",0.0
+"('Yungeen Ace', 'YNW Melly')",0.0
+"('NoCap', 'YNW Melly')",0.0
+"('A Boogie Wit da Hoodie', 'YNW Melly')",0.0
+"('Kodak Black', 'YNW Melly')",2.0
+"('Rich The Kid', 'YNW Melly')",0.0
+"('Almighty Jay', 'YBN Nahmir')",10.0
+"('Ugly God', 'YBN Nahmir')",0.0
+"('Comethazine', 'YBN Nahmir')",0.0
+"('Lil Yachty', 'YBN Nahmir')",0.0
+"('Nebu Kiniza', 'YBN Nahmir')",0.0
+"('Flipp Dinero', 'YBN Nahmir')",0.0
+"('Famous Dex', 'YBN Nahmir')",0.0
+"('Cordae', 'YBN Nahmir')",5.0
+"('Lil Gnar', 'YBN Nahmir')",0.0
+"('Blueface', 'YBN Nahmir')",0.0
+"('Tay-K', 'YBN Nahmir')",0.0
+"('Yung Bans', 'YBN Nahmir')",0.0
+"('NAV', 'YBN Nahmir')",0.0
+"('SOB X RBE', 'YBN Nahmir')",0.0
+"('Rich The Kid', 'YBN Nahmir')",0.0
+"('Sheck Wes', 'YBN Nahmir')",0.0
+"('Lil Pump', 'YBN Nahmir')",0.0
+"('Tee Grizzley', 'YBN Nahmir')",0.0
+"('Quality Control', 'YBN Nahmir')",0.0
+"('Dbangz', 'YBN Nahmir')",0.0
+"('YNW Melly', 'Blueface')",0.0
+"('Yung Tory', 'Blueface')",0.0
+"('BlocBoy JB', 'Blueface')",0.0
+"('YK Osiris', 'Blueface')",0.0
+"('Comethazine', 'Blueface')",0.0
+"('Roddy Ricch', 'Blueface')",0.0
+"('Lil Tecca', 'Blueface')",0.0
+"('DaBaby', 'Blueface')",2.0
+"('YBN Nahmir', 'Blueface')",2.0
+"('Flipp Dinero', 'Blueface')",0.0
+"('Quin Nfn', 'Blueface')",0.0
+"('Almighty Jay', 'Blueface')",0.0
+"('Quando Rondo', 'Blueface')",0.0
+"('Cordae', 'Blueface')",0.0
+"('Lil Mosey', 'Blueface')",0.0
+"('Lil Yachty', 'Blueface')",0.0
+"('Famous Dex', 'Blueface')",0.0
+"('DDG', 'Blueface')",0.0
+"('Yung Bans', 'Blueface')",0.0
+"('SleazyWorld Go', 'Blueface')",0.0
+"('Kid Trunks', 'Lil Gnar')",0.0
+"('Yung Pinch', 'Lil Gnar')",0.0
+"('Comethazine', 'Lil Gnar')",0.0
+"('Nebu Kiniza', 'Lil Gnar')",0.0
+"('Matt Ox', 'Lil Gnar')",0.0
+"('Ronny J', 'Lil Gnar')",0.0
+"('Almighty Jay', 'Lil Gnar')",0.0
+"('Global Dan', 'Lil Gnar')",0.0
+"('YBN Nahmir', 'Lil Gnar')",1.0
+"('Cooliecut', 'Lil Gnar')",0.0
+"('Famous Dex', 'Lil Gnar')",0.0
+"('Flipp Dinero', 'Lil Gnar')",0.0
+"('Yung Bans', 'Lil Gnar')",1.0
+"('NOT', 'Lil Gnar')",0.0
+"('Fukkit', 'Lil Gnar')",0.0
+"('UnoTheActivist', 'Lil Gnar')",1.0
+"('Smooky MarGielaa', 'Lil Gnar')",0.0
+"('Lil Yachty', 'Lil Gnar')",1.0
+"('Robb Bank', 'Lil Gnar')",1.0
+"('Yung Tory', 'Lil Gnar')",0.0
+"('Lil Yachty', 'Lil Pump')",1.0
+"('Ugly God', 'Lil Pump')",0.0
+"('Famous Dex', 'Lil Pump')",0.0
+"('Ronny J', 'Lil Pump')",14.0
+"('Tay-K', 'Lil Pump')",0.0
+"('Quality Control', 'Lil Pump')",0.0
+"('Kid Trunks', 'Lil Pump')",0.0
+"('Comethazine', 'Lil Pump')",0.0
+"('Lil Gnar', 'Lil Pump')",0.0
+"('Lil Xan', 'Lil Pump')",0.0
+"('6ix9ine', 'Lil Pump')",0.0
+"('Rich The Kid', 'Lil Pump')",0.0
+"('Huncho Jack', 'Lil Pump')",0.0
+"('YBN Nahmir', 'Lil Pump')",0.0
+"('Icy Narco', 'Lil Pump')",0.0
+"('Yung Bans', 'Lil Pump')",0.0
+"('Supreme Patty', 'Lil Pump')",0.0
+"('Quavo', 'Lil Pump')",2.0
+"('City Morgue', 'Lil Pump')",0.0
+"('Keith Ape', 'Lil Pump')",0.0
+"('Almighty Jay', 'Flipp Dinero')",0.0
+"('YBN Nahmir', 'Flipp Dinero')",0.0
+"('Nebu Kiniza', 'Flipp Dinero')",0.0
+"('Cordae', 'Flipp Dinero')",0.0
+"('Yung Tory', 'Flipp Dinero')",0.0
+"('88GLAM', 'Flipp Dinero')",0.0
+"('YK Osiris', 'Flipp Dinero')",0.0
+"('Lil Gnar', 'Flipp Dinero')",0.0
+"('Yung Pinch', 'Flipp Dinero')",0.0
+"('NAV', 'Flipp Dinero')",0.0
+"('Quavo', 'Flipp Dinero')",0.0
+"('Blueface', 'Flipp Dinero')",0.0
+"('Lil Mosey', 'Flipp Dinero')",0.0
+"('Ugly God', 'Flipp Dinero')",0.0
+"('Jay Critch', 'Flipp Dinero')",2.0
+"('Sheck Wes', 'Flipp Dinero')",0.0
+"('Famous Dex', 'Flipp Dinero')",0.0
+"('Comethazine', 'Flipp Dinero')",0.0
+"('Kap G', 'Flipp Dinero')",0.0
+"('Yung Bans', 'Flipp Dinero')",0.0
+"('Lil Yachty', 'Tay-K')",0.0
+"('Comethazine', 'Tay-K')",0.0
+"('Famous Dex', 'Tay-K')",0.0
+"('Ugly God', 'Tay-K')",0.0
+"('Yung Bans', 'Tay-K')",0.0
+"('YBN Nahmir', 'Tay-K')",0.0
+"('D. Savage', 'Tay-K')",0.0
+"('UnoTheActivist', 'Tay-K')",0.0
+"('Young Nudy', 'Tay-K')",2.0
+"('Almighty Jay', 'Tay-K')",0.0
+"('Duwap Kaine', 'Tay-K')",0.0
+"('SahBabii', 'Tay-K')",0.0
+"('Sheck Wes', 'Tay-K')",0.0
+"('Pi’erre Bourne', 'Tay-K')",0.0
+"('Matt Ox', 'Tay-K')",0.0
+"('Lil Gnar', 'Tay-K')",0.0
+"('SoFaygo', 'Tay-K')",0.0
+"('AAP Mob', 'Tay-K')",0.0
+"('AAP ANT', 'Tay-K')",0.0
+"('Remble', 'Tay-K')",0.0
+"('Almighty Jay', 'Famous Dex')",0.0
+"('Lil Yachty', 'Famous Dex')",3.0
+"('Quality Control', 'Famous Dex')",0.0
+"('Ugly God', 'Famous Dex')",1.0
+"('Lil Pump', 'Famous Dex')",0.0
+"('YBN Nahmir', 'Famous Dex')",0.0
+"('Nebu Kiniza', 'Famous Dex')",0.0
+"('Yung Bans', 'Famous Dex')",0.0
+"('Smooky MarGielaa', 'Famous Dex')",0.0
+"('Jay Critch', 'Famous Dex')",7.0
+"('Tay-K', 'Famous Dex')",0.0
+"('Ronny J', 'Famous Dex')",0.0
+"('Comethazine', 'Famous Dex')",0.0
+"('Huncho Jack', 'Famous Dex')",0.0
+"('D. Savage', 'Famous Dex')",0.0
+"('Rich The Kid', 'Famous Dex')",16.0
+"('AAP ANT', 'Famous Dex')",0.0
+"('SahBabii', 'Famous Dex')",0.0
+"('AAP Mob', 'Famous Dex')",0.0
+"('Lil Gnar', 'Famous Dex')",0.0
+"('Quavo', '6ix9ine')",0.0
+"('Lil Pump', '6ix9ine')",0.0
+"('YBN Nahmir', '6ix9ine')",0.0
+"('NAV', '6ix9ine')",0.0
+"('Sheck Wes', '6ix9ine')",0.0
+"('Flipp Dinero', '6ix9ine')",0.0
+"('Blueface', '6ix9ine')",0.0
+"('Tee Grizzley', '6ix9ine')",0.0
+"('Lil Xan', '6ix9ine')",0.0
+"('Famous Dex', '6ix9ine')",0.0
+"('Trippie Redd', '6ix9ine')",0.0
+"('Metro Boomin', '6ix9ine')",0.0
+"('Lil Mosey', '6ix9ine')",0.0
+"('Lil Yachty', '6ix9ine')",0.0
+"('Comethazine', '6ix9ine')",0.0
+"('21 Savage', '6ix9ine')",0.0
+"('Ugly God', '6ix9ine')",0.0
+"('Quality Control', '6ix9ine')",0.0
+"('YNW Melly', '6ix9ine')",0.0
+"('Lil Gnar', '6ix9ine')",0.0
+"('Pi’erre Bourne', 'Yeat')",0.0
+"('UnoTheActivist', 'Yeat')",0.0
+"('Young Nudy', 'Yeat')",0.0
+"('Lil Keed', 'Yeat')",0.0
+"('D. Savage', 'Yeat')",0.0
+"('Playboi Carti', 'Yeat')",0.0
+"('Tay-K', 'Yeat')",0.0
+"('Lancey Foux', 'Yeat')",2.0
+"('SahBabii', 'Yeat')",0.0
+"('Ken Carson', 'Yeat')",4.0
+"('Comethazine', 'Yeat')",0.0
+"('KANKAN', 'Yeat')",0.0
+"('LUCKI', 'Yeat')",0.0
+"('Autumn!', 'Yeat')",0.0
+"('Summrs', 'Yeat')",1.0
+"('tana', 'Yeat')",0.0
+"('SoFaygo', 'Yeat')",0.0
+"('KAHDAMI', 'Yeat')",0.0
+"('SSGKobe', 'Yeat')",0.0
+"('Sided', 'Yeat')",0.0
+"('Blueface', 'DaBaby')",0.0
+"('YNW Melly', 'DaBaby')",0.0
+"('Roddy Ricch', 'DaBaby')",6.0
+"('Lil Tecca', 'DaBaby')",0.0
+"('Quando Rondo', 'DaBaby')",0.0
+"('Lil Mosey', 'DaBaby')",0.0
+"('YoungBoy Never Broke Again', 'DaBaby')",28.0
+"('Tee Grizzley', 'DaBaby')",0.0
+"('Cordae', 'DaBaby')",0.0
+"('Moneybagg Yo', 'DaBaby')",2.0
+"('Rich The Kid', 'DaBaby')",2.0
+"('Quavo', 'DaBaby')",4.0
+"('Kodak Black', 'DaBaby')",0.0
+"('Gunna', 'DaBaby')",2.0
+"('Flipp Dinero', 'DaBaby')",0.0
+"('YBN Nahmir', 'DaBaby')",0.0
+"('NAV', 'DaBaby')",0.0
+"('Comethazine', 'DaBaby')",0.0
+"('BlocBoy JB', 'DaBaby')",0.0
+"('SleazyWorld Go', 'DaBaby')",0.0
+"('Oliver Francis', 'Yung Pinch')",0.0
+"('Global Dan', 'Yung Pinch')",0.0
+"('Lil Gnar', 'Yung Pinch')",0.0
+"('Kid Trunks', 'Yung Pinch')",0.0
+"('Lil Xan', 'Yung Pinch')",0.0
+"('Fat Nick', 'Yung Pinch')",0.0
+"('Nebu Kiniza', 'Yung Pinch')",0.0
+"('Landon Cube', 'Yung Pinch')",0.0
+"('Flipp Dinero', 'Yung Pinch')",0.0
+"('Yung Bans', 'Yung Pinch')",0.0
+"('Tyla Yaweh', 'Yung Pinch')",0.0
+"('Almighty Jay', 'Yung Pinch')",0.0
+"('Danger Incorporated', 'Yung Pinch')",0.0
+"('88GLAM', 'Yung Pinch')",0.0
+"('Paris Shadows', 'Yung Pinch')",0.0
+"('6 Dogs', 'Yung Pinch')",0.0
+"('COTIS', 'Yung Pinch')",0.0
+"('Unodavid', 'Yung Pinch')",0.0
+"('Yung Tory', 'Yung Pinch')",0.0
+"('nothingnowhere.', 'Yung Pinch')",0.0
+"('Desiigner', 'Rae Sremmurd')",0.0
+"('Swae Lee', 'Rae Sremmurd')",54.0
+"('AAP Ferg', 'Rae Sremmurd')",0.0
+"('Huncho Jack', 'Rae Sremmurd')",0.0
+"('Quality Control', 'Rae Sremmurd')",0.0
+"('Mike WiLL Made-It', 'Rae Sremmurd')",0.0
+"('AAP Mob', 'Rae Sremmurd')",0.0
+"('Migos', 'Rae Sremmurd')",0.0
+"('Quavo', 'Rae Sremmurd')",0.0
+"('Young Thug', 'Rae Sremmurd')",4.0
+"('Famous Dex', 'Rae Sremmurd')",0.0
+"('Rich The Kid', 'Rae Sremmurd')",0.0
+"('Lil Yachty', 'Rae Sremmurd')",0.0
+"('PnB Rock', 'Rae Sremmurd')",0.0
+"('Fetty Wap', 'Rae Sremmurd')",0.0
+"('88GLAM', 'Rae Sremmurd')",0.0
+"('MadeinTYO', 'Rae Sremmurd')",0.0
+"('YG', 'Rae Sremmurd')",0.0
+"('YBN Nahmir', 'Rae Sremmurd')",0.0
+"('Metro Boomin', 'Rae Sremmurd')",0.0
+"('Quality Control', 'Huncho Jack')",0.0
+"('Desiigner', 'Huncho Jack')",0.0
+"('Quavo', 'Huncho Jack')",13.0
+"('AAP Ferg', 'Huncho Jack')",0.0
+"('AAP Mob', 'Huncho Jack')",0.0
+"('Mike WiLL Made-It', 'Huncho Jack')",0.0
+"('Sheck Wes', 'Huncho Jack')",0.0
+"('Lil Yachty', 'Huncho Jack')",0.0
+"('88GLAM', 'Huncho Jack')",0.0
+"('Rich The Kid', 'Huncho Jack')",0.0
+"('Rae Sremmurd', 'Huncho Jack')",0.0
+"('Famous Dex', 'Huncho Jack')",0.0
+"('Metro Boomin', 'Huncho Jack')",0.0
+"('Migos', 'Huncho Jack')",0.0
+"('Swae Lee', 'Huncho Jack')",0.0
+"('Young Thug', 'Huncho Jack')",0.0
+"('AAP ANT', 'Huncho Jack')",0.0
+"('Ugly God', 'Huncho Jack')",0.0
+"('Yung Bans', 'Huncho Jack')",0.0
+"('21 Savage', 'Huncho Jack')",0.0
+"('Landon Cube', 'Tyla Yaweh')",0.0
+"('SAINt JHN', 'Tyla Yaweh')",0.0
+"('Flipp Dinero', 'Tyla Yaweh')",0.0
+"('GASHI', 'Tyla Yaweh')",0.0
+"('88GLAM', 'Tyla Yaweh')",0.0
+"('PnB Rock', 'Tyla Yaweh')",2.0
+"('Lil Mosey', 'Tyla Yaweh')",0.0
+"('Arizona Zervas', 'Tyla Yaweh')",0.0
+"('Swae Lee', 'Tyla Yaweh')",0.0
+"('Vory', 'Tyla Yaweh')",0.0
+"('Yung Pinch', 'Tyla Yaweh')",0.0
+"('Global Dan', 'Tyla Yaweh')",0.0
+"('NAV', 'Tyla Yaweh')",0.0
+"('gianni  kyle', 'Tyla Yaweh')",0.0
+"('Nebu Kiniza', 'Tyla Yaweh')",0.0
+"('Reo Cragun', 'Tyla Yaweh')",0.0
+"('Roy Woods', 'Tyla Yaweh')",0.0
+"('Tee Grizzley', 'Tyla Yaweh')",0.0
+"('COTIS', 'Tyla Yaweh')",0.0
+"('Lil Gnar', 'Tyla Yaweh')",0.0
+"('Majid Jordan', '6LACK')",0.0
+"('Yo Trane', '6LACK')",0.0
+"('PARTYNEXTDOOR', '6LACK')",0.0
+"('Roy Woods', '6LACK')",0.0
+"('Ryan Trey', '6LACK')",0.0
+"('TWENTY88', '6LACK')",0.0
+"('Bryson Tiller', '6LACK')",0.0
+"('Eli Sostre', '6LACK')",0.0
+"('Che Ecru', '6LACK')",0.0
+"('PnB Rock', '6LACK')",0.0
+"('THEY.', '6LACK')",0.0
+"('anders', '6LACK')",0.0
+"('Nbdy', '6LACK')",0.0
+"('Quavo', '6LACK')",0.0
+"('SiR', '6LACK')",0.0
+"('88GLAM', '6LACK')",0.0
+"('TYuS', '6LACK')",0.0
+"('Vory', '6LACK')",0.0
+"('Xavier Omär', '6LACK')",0.0
+"('Kaash Paige', '6LACK')",0.0
+"('AAP Mob', 'AAP Ferg')",2.0
+"('Desiigner', 'AAP Ferg')",0.0
+"('Huncho Jack', 'AAP Ferg')",0.0
+"('Mike WiLL Made-It', 'AAP Ferg')",0.0
+"('Quality Control', 'AAP Ferg')",0.0
+"('Rae Sremmurd', 'AAP Ferg')",0.0
+"('AAP ANT', 'AAP Ferg')",0.0
+"('Migos', 'AAP Ferg')",4.0
+"('YG', 'AAP Ferg')",0.0
+"('Quavo', 'AAP Ferg')",0.0
+"('Sheck Wes', 'AAP Ferg')",0.0
+"('Waka Flocka Flame', 'AAP Ferg')",2.0
+"('AAP Twelvyy', 'AAP Ferg')",0.0
+"('Juicy J', 'AAP Ferg')",0.0
+"('Cousin Stizz', 'AAP Ferg')",0.0
+"('Rich The Kid', 'AAP Ferg')",2.0
+"('Bobby Shmurda', 'AAP Ferg')",0.0
+"('ScHoolboy Q', 'AAP Ferg')",4.0
+"('Maxo Kream', 'AAP Ferg')",0.0
+"('2 Chainz', 'AAP Ferg')",0.0
+"('Huncho Jack', 'Quality Control')",0.0
+"('Rich The Kid', 'Quality Control')",0.0
+"('Ugly God', 'Quality Control')",0.0
+"('Famous Dex', 'Quality Control')",0.0
+"('Quavo', 'Quality Control')",24.0
+"('Lil Yachty', 'Quality Control')",26.0
+"('Jay Critch', 'Quality Control')",0.0
+"('88GLAM', 'Quality Control')",0.0
+"('Tee Grizzley', 'Quality Control')",4.0
+"('Almighty Jay', 'Quality Control')",0.0
+"('NAV', 'Quality Control')",0.0
+"('Swae Lee', 'Quality Control')",0.0
+"('Yung Bans', 'Quality Control')",0.0
+"('Kap G', 'Quality Control')",0.0
+"('AAP Mob', 'Quality Control')",0.0
+"('Mike WiLL Made-It', 'Quality Control')",0.0
+"('AAP Ferg', 'Quality Control')",0.0
+"('YBN Nahmir', 'Quality Control')",0.0
+"('PnB Rock', 'Quality Control')",2.0
+"('HoodRich Pablo Juan', 'Quality Control')",0.0
+"('Metro Boomin', 'Quavo')",0.0
+"('Sheck Wes', 'Quavo')",0.0
+"('Huncho Jack', 'Quavo')",13.0
+"('Quality Control', 'Quavo')",0.0
+"('21 Savage', 'Quavo')",1.0
+"('88GLAM', 'Quavo')",0.0
+"('Flipp Dinero', 'Quavo')",0.0
+"('Young Thug', 'Quavo')",0.0
+"('HoodRich Pablo Juan', 'Quavo')",0.0
+"('Rich The Kid', 'Quavo')",1.0
+"('NAV', 'Quavo')",0.0
+"('Mike WiLL Made-It', 'Quavo')",0.0
+"('Lil Yachty', 'Quavo')",0.0
+"('AAP Mob', 'Quavo')",0.0
+"('Tm88', 'Quavo')",0.0
+"('Young Nudy', 'Quavo')",0.0
+"('Jay Critch', 'Quavo')",0.0
+"('Offset', 'Quavo')",2.0
+"('Kap G', 'Quavo')",0.0
+"('Lil Keed', 'Quavo')",0.0
+"('Scorey', 'The Kid LAROI')",0.0
+"('Polo G', 'The Kid LAROI')",3.0
+"('Lil Mosey', 'The Kid LAROI')",7.0
+"('Lil Tecca', 'The Kid LAROI')",0.0
+"('YNW Melly', 'The Kid LAROI')",0.0
+"('Yung Pinch', 'The Kid LAROI')",0.0
+"('PnB Rock', 'The Kid LAROI')",0.0
+"('iann dior', 'The Kid LAROI')",0.0
+"('Internet Money', 'The Kid LAROI')",5.0
+"('Bankrol Hayden', 'The Kid LAROI')",0.0
+"('Landon Cube', 'The Kid LAROI')",0.0
+"('Arizona Zervas', 'The Kid LAROI')",0.0
+"('24kGoldn', 'The Kid LAROI')",0.0
+"('Tyla Yaweh', 'The Kid LAROI')",0.0
+"('benny blanco', 'The Kid LAROI')",0.0
+"('Dro Kenji', 'The Kid LAROI')",0.0
+"('Lil Skies', 'The Kid LAROI')",0.0
+"('KillBunk', 'The Kid LAROI')",0.0
+"('Trippie Redd', 'The Kid LAROI')",0.0
+"('Fresco Trey', 'The Kid LAROI')",0.0
+"('Vory', 'SAINt JHN')",0.0
+"('Amir Obe', 'SAINt JHN')",0.0
+"('Anfa Rose', 'SAINt JHN')",0.0
+"('Tyla Yaweh', 'SAINt JHN')",0.0
+"('Reo Cragun', 'SAINt JHN')",0.0
+"('Roy Woods', 'SAINt JHN')",0.0
+"('88GLAM', 'SAINt JHN')",0.0
+"('THEY.', 'SAINt JHN')",0.0
+"('GASHI', 'SAINt JHN')",0.0
+"('anders', 'SAINt JHN')",0.0
+"('Quavo', 'SAINt JHN')",0.0
+"('Quality Control', 'SAINt JHN')",0.0
+"('Swae Lee', 'SAINt JHN')",0.0
+"('FRVRFRIDAY', 'SAINt JHN')",0.0
+"('PnB Rock', 'SAINt JHN')",0.0
+"('070 Shake', 'SAINt JHN')",0.0
+"('A.CHAL', 'SAINt JHN')",0.0
+"('Jazz Cartier', 'SAINt JHN')",0.0
+"('Belly', 'SAINt JHN')",0.0
+"('NAV', 'SAINt JHN')",0.0
+"('DeJ Loaf', 'Fetty Wap')",0.0
+"('PnB Rock', 'Fetty Wap')",0.0
+"('YFN Lucci', 'Fetty Wap')",0.0
+"('Rae Sremmurd', 'Fetty Wap')",0.0
+"('Kid Ink', 'Fetty Wap')",0.0
+"('Desiigner', 'Fetty Wap')",0.0
+"('Sage The Gemini', 'Fetty Wap')",0.0
+"('Mike WiLL Made-It', 'Fetty Wap')",0.0
+"('Rich Homie Quan', 'Fetty Wap')",0.0
+"('Quality Control', 'Fetty Wap')",0.0
+"('Mustard', 'Fetty Wap')",0.0
+"('K CAMP', 'Fetty Wap')",0.0
+"('Ty Dolla ign', 'Fetty Wap')",0.0
+"('Speaker Knockerz', 'Fetty Wap')",0.0
+"('Rich The Kid', 'Fetty Wap')",0.0
+"('Lil Yachty', 'Fetty Wap')",0.0
+"('Young Money', 'Fetty Wap')",0.0
+"('Soulja Boy', 'Fetty Wap')",0.0
+"('Young Thug', 'Fetty Wap')",0.0
+"('NAV', 'Fetty Wap')",0.0
+"('Tee Grizzley', 'PnB Rock')",4.0
+"('YK Osiris', 'PnB Rock')",0.0
+"('Jay Critch', 'PnB Rock')",0.0
+"('Quando Rondo', 'PnB Rock')",0.0
+"('YFN Lucci', 'PnB Rock')",2.0
+"('24hrs', 'PnB Rock')",2.0
+"('NAV', 'PnB Rock')",0.0
+"('Luh Kel', 'PnB Rock')",0.0
+"('Roy Woods', 'PnB Rock')",2.0
+"('Quality Control', 'PnB Rock')",0.0
+"('Rich The Kid', 'PnB Rock')",0.0
+"('BLEU', 'PnB Rock')",0.0
+"('Vory', 'PnB Rock')",0.0
+"('Shy Glizzy', 'PnB Rock')",0.0
+"('Yung Tory', 'PnB Rock')",0.0
+"('DeJ Loaf', 'PnB Rock')",0.0
+"('YBN Nahmir', 'PnB Rock')",0.0
+"('Young M.A', 'PnB Rock')",0.0
+"('Scorey', 'PnB Rock')",0.0
+"('Nebu Kiniza', 'PnB Rock')",0.0
+"('Cam Meekins', 'mike.')",0.0
+"('Luke Christopher', 'mike.')",0.0
+"('Chris Webby', 'mike.')",0.0
+"('Huey Mack', 'mike.')",0.0
+"('Skizzy Mars', 'mike.')",0.0
+"('Kid Quill', 'mike.')",0.0
+"('Nate Good', 'mike.')",0.0
+"('Justin Stone', 'mike.')",0.0
+"('Aer', 'mike.')",0.0
+"('Hoodie Allen', 'mike.')",0.0
+"('Ryan Caraveo', 'mike.')",0.0
+"('Sammy Adams', 'mike.')",0.0
+"('Witt Lowry', 'mike.')",0.0
+"('Bryce Vine', 'mike.')",0.0
+"('gianni  kyle', 'mike.')",0.0
+"('Cal Scruby', 'mike.')",0.0
+"('G-Eazy', 'mike.')",0.0
+"('Radical Something', 'mike.')",0.0
+"(""The Dean's List"", 'mike.')",0.0
+"('SonReal', 'mike.')",0.0
+"('Madison Beer', 'Bazzi')",0.0
+"('Khalid', 'Bazzi')",0.0
+"('PRETTYMUCH', 'Bazzi')",0.0
+"('Julia Michaels', 'Bazzi')",0.0
+"('Jack  Jack', 'Bazzi')",0.0
+"('ZAYN', 'Bazzi')",0.0
+"(""Olivia O'Brien"", 'Bazzi')",0.0
+"('Ruel', 'Bazzi')",0.0
+"('Jessie Reyez', 'Bazzi')",0.0
+"('John K', 'Bazzi')",0.0
+"('Chelsea Cutler', 'Bazzi')",0.0
+"('Lauv', 'Bazzi')",0.0
+"('Bea Miller', 'Bazzi')",0.0
+"('MAX', 'Bazzi')",0.0
+"('benny blanco', 'Bazzi')",0.0
+"('Marc E. Bassy', 'Bazzi')",0.0
+"('Niall Horan', 'Bazzi')",0.0
+"(""Why Don't We"", 'Bazzi')",0.0
+"('AJ Mitchell', 'Bazzi')",0.0
+"('Christian French', 'Bazzi')",0.0
+"('Aminé', 'Jaden')",0.0
+"('Duckwrth', 'Jaden')",0.0
+"('070 Shake', 'Jaden')",0.0
+"('Rich Brian', 'Jaden')",0.0
+"('Yeek', 'Jaden')",0.0
+"('BROCKHAMPTON', 'Jaden')",0.0
+"('tobi lou', 'Jaden')",0.0
+"('Saba', 'Jaden')",0.0
+"('GoldLink', 'Jaden')",0.0
+"('Choker', 'Jaden')",0.0
+"('AAP Mob', 'Jaden')",0.0
+"('Huncho Jack', 'Jaden')",0.0
+"('Roy Woods', 'Jaden')",0.0
+"('Kevin Abstract', 'Jaden')",0.0
+"('Sheck Wes', 'Jaden')",0.0
+"('Smino', 'Jaden')",0.0
+"('EARTHGANG', 'Jaden')",0.0
+"('AAP Ferg', 'Jaden')",0.0
+"('Kota the Friend', 'Jaden')",0.0
+"('Don Toliver', 'Jaden')",0.0
+"('Hoodie Allen', 'G-Eazy')",1.0
+"('mike.', 'G-Eazy')",0.0
+"('Chris Webby', 'G-Eazy')",0.0
+"('Skizzy Mars', 'G-Eazy')",0.0
+"('Logic', 'G-Eazy')",0.0
+"('Bryce Vine', 'G-Eazy')",0.0
+"('Futuristic', 'G-Eazy')",0.0
+"('Kid Ink', 'G-Eazy')",0.0
+"('Lil Dicky', 'G-Eazy')",0.0
+"('Tyla Yaweh', 'G-Eazy')",0.0
+"('Ty Dolla ign', 'G-Eazy')",3.0
+"('Ryan Caraveo', 'G-Eazy')",0.0
+"('VIC MENSA', 'G-Eazy')",0.0
+"('Witt Lowry', 'G-Eazy')",0.0
+"('Sammy Adams', 'G-Eazy')",0.0
+"('mansionz', 'G-Eazy')",0.0
+"('GASHI', 'G-Eazy')",0.0
+"('Marc E. Bassy', 'G-Eazy')",5.0
+"('Arizona Zervas', 'G-Eazy')",0.0
+"('French Montana', 'G-Eazy')",2.0
