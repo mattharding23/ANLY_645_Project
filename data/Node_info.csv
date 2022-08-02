@@ -1,0 +1,441 @@
+node,node_size,node_color
+J. Cole,8400.0,4.0
+Meek Mill,7500.0,6.0
+DJ Khaled,7600.0,9.0
+Rick Ross,7600.0,7.0
+Wale,7000.0,10.0
+PARTYNEXTDOOR,7400.0,7.0
+2 Chainz,7600.0,7.0
+Tory Lanez,7800.0,7.0
+Future,8700.0,4.0
+Young Thug,8400.0,9.0
+Jeremih,7400.0,8.0
+Bryson Tiller,7700.0,6.0
+French Montana,7700.0,6.0
+Miguel,7600.0,4.0
+21 Savage,8600.0,3.0
+Metro Boomin,7800.0,4.0
+Migos,7700.0,5.0
+Ty Dolla ign,8000.0,7.0
+Lil Wayne,8500.0,5.0
+Young Money,1240.0,9.0
+ScHoolboy Q,7200.0,7.0
+Ace Hood,1220.0,8.0
+Jay Rock,7000.0,8.0
+Waka Flocka Flame,1280.0,8.0
+Mike WiLL Made-It,1280.0,5.0
+YG,7500.0,7.0
+Kid Ink,6700.0,6.0
+Bas,6600.0,8.0
+AAP Ferg,7100.0,7.0
+VIC MENSA,1240.0,7.0
+Juicy J,7300.0,9.0
+B.o.B,7100.0,7.0
+Big Sean,7800.0,8.0
+Pusha T,7300.0,6.0
+AAP Rocky,8100.0,3.0
+Kid Cudi,8100.0,3.0
+Freddie Gibbs,6600.0,7.0
+Kendrick Lamar,8800.0,4.0
+Nipsey Hussle,6600.0,7.0
+Isaiah Rashad,6600.0,4.0
+Joey Bada,7400.0,4.0
+Chance the Rapper,7500.0,5.0
+Curreny,1280.0,9.0
+Lupe Fiasco,6600.0,8.0
+DJ Drama,1140.0,8.0
+Fabolous,6600.0,9.0
+Jim Jones,1180.0,6.0
+Yo Gotti,6900.0,9.0
+Jeezy,6900.0,10.0
+Jadakiss,6600.0,9.0
+Birdman,1260.0,6.0
+Plies,1260.0,10.0
+T.I.,7300.0,9.0
+T-Pain,7600.0,8.0
+Tyga,7900.0,7.0
+Juelz Santana,1260.0,7.0
+Bun B,1180.0,8.0
+Young Buck,1200.0,10.0
+Slim Thug,1180.0,9.0
+The Diplomats,940.0,8.0
+Young Dro,960.0,10.0
+Beanie Sigel,1060.0,11.0
+Lloyd Banks,6500.0,7.0
+Dom Kennedy,1180.0,7.0
+Big K.R.I.T.,1200.0,12.0
+The-Dream,1260.0,7.0
+Lloyd,6500.0,8.0
+August Alsina,1240.0,5.0
+K CAMP,1240.0,10.0
+BJ The Chicago Kid,1220.0,7.0
+Jacquees,6500.0,7.0
+Sevyn Streeter,1180.0,9.0
+TWENTY88,960.0,2.0
+Teyana Taylor,1220.0,9.0
+Omarion,1200.0,7.0
+Majid Jordan,6600.0,4.0
+Roy Woods,1220.0,6.0
+6LACK,7400.0,6.0
+Yo Trane,940.0,4.0
+TYuS,600.0,2.0
+PnB Rock,6900.0,5.0
+dvsn,1200.0,6.0
+Ramriddlz,615.0,4.0
+Ryan Trey,1060.0,2.0
+Che Ecru,980.0,2.0
+ELHAE,940.0,6.0
+Tems,7600.0,6.0
+Eli Sostre,940.0,2.0
+Vory,1200.0,4.0
+Jhené Aiko,7500.0,4.0
+Quavo,7800.0,7.0
+Rich Homie Quan,1260.0,6.0
+Young Scooter,1060.0,7.0
+Zaytoven,1100.0,11.0
+Gucci Mane,7700.0,8.0
+Preme,1220.0,7.0
+Trey Songz,6900.0,7.0
+Chief Keef,7200.0,10.0
+Lil Durk,8400.0,6.0
+Young Dolph,7100.0,7.0
+NAV,7400.0,8.0
+Gunna,8400.0,4.0
+Lil Yachty,7600.0,6.0
+AAP Mob,1200.0,4.0
+Don Toliver,7800.0,3.0
+Famous Dex,1200.0,8.0
+Kodak Black,8000.0,6.0
+Huncho Jack,1160.0,5.0
+Lil Keed,1200.0,5.0
+SahBabii,1100.0,7.0
+Young Nudy,6900.0,6.0
+Rae Sremmurd,7200.0,8.0
+Desiigner,1260.0,5.0
+Pi’erre Bourne,1280.0,6.0
+UnoTheActivist,1120.0,8.0
+Mario,1280.0,5.0
+Pleasure P,980.0,6.0
+Pretty Ricky,1100.0,12.0
+J. Holiday,1040.0,8.0
+Sammie,1220.0,6.0
+Keyshia Cole,1280.0,9.0
+Ginuwine,6600.0,8.0
+Baby Bash,1220.0,12.0
+Bow Wow,1200.0,8.0
+Bobby V.,1160.0,6.0
+DaniLeigh,1220.0,5.0
+DeJ Loaf,1220.0,7.0
+Kaash Paige,1220.0,1.0
+Max B,660.0,1.0
+Uncle Murda,920.0,3.0
+Vado,660.0,3.0
+Styles P,1220.0,8.0
+H.E.R.,7400.0,3.0
+Brent Faiyaz,8200.0,2.0
+Ro James,900.0,2.0
+Syd,6500.0,6.0
+Xavier Omär,1080.0,6.0
+SiR,1240.0,5.0
+Jazmine Sullivan,1260.0,9.0
+Sheck Wes,6500.0,4.0
+Lil Baby,8700.0,4.0
+Trippie Redd,8100.0,3.0
+88GLAM,1140.0,9.0
+Flipp Dinero,1200.0,6.0
+Playboi Carti,8100.0,4.0
+Quality Control,1280.0,7.0
+Rich The Kid,6800.0,10.0
+Comethazine,1260.0,5.0
+Roddy Ricch,8000.0,3.0
+YBN Nahmir,1260.0,6.0
+Bobby Shmurda,1200.0,5.0
+Lil Uzi Vert,8400.0,4.0
+Mustard,7200.0,7.0
+Eric Bellinger,1260.0,5.0
+Mike Jones,1200.0,7.0
+Frank Ocean,8100.0,4.0
+Childish Gambino,7700.0,3.0
+Earl Sweatshirt,6600.0,5.0
+JAY-Z,8200.0,3.0
+KIDS SEE GHOSTS,1200.0,2.0
+Vince Staples,6800.0,5.0
+BROCKHAMPTON,6800.0,3.0
+Baby Keem,7700.0,2.0
+Clipse,1100.0,8.0
+CyHi,1000.0,5.0
+Jay Electronica,1180.0,7.0
+Smoke DZA,1040.0,7.0
+Ab-Soul,1140.0,7.0
+Boldy James,1080.0,7.0
+Danny Brown,1180.0,7.0
+The Cool Kids,630.0,6.0
+Action Bronson,1240.0,9.0
+The Alchemist,1280.0,6.0
+Benny The Butcher,1280.0,5.0
+WZRD,960.0,2.0
+Mac Miller,8300.0,3.0
+Denzel Curry,7200.0,6.0
+Young Ratoo,40.0,0.0
+Flatbush Zombies,1140.0,5.0
+JPEGMAFIA,1220.0,6.0
+Black Hippy,920.0,2.0
+AAP Twelvyy,1080.0,1.0
+Dizzy Wright,1060.0,5.0
+Tyler The Creator,8400.0,2.0
+Odd Future,1060.0,2.0
+Kevin Abstract,1180.0,4.0
+The Internet,1200.0,4.0
+Solange,1200.0,10.0
+Pharrell Williams,8100.0,2.0
+Domo Genesis,1100.0,4.0
+The Underachievers,1000.0,3.0
+Mick Jenkins,1200.0,7.0
+N.E.R.D,1140.0,2.0
+Spillage Village,1000.0,1.0
+MellowHype,570.0,1.0
+Mike G,570.0,0.0
+Lil B,980.0,2.0
+SpaceGhostPurrp,645.0,4.0
+Death Grips,1160.0,4.0
+MellowHigh,465.0,1.0
+Casey Veggies,1040.0,3.0
+BADBADNOTGOOD,1280.0,4.0
+Jet Age of Tomorrow,450.0,1.0
+King Geedorah,1060.0,2.0
+Madvillain,1260.0,5.0
+Donnie Trumpet  The Social Experiment,980.0,2.0
+Noname,1100.0,6.0
+Aminé,6900.0,5.0
+Shelley FKA DRAM,1220.0,3.0
+Phony Ppl,1000.0,2.0
+Saba,1260.0,4.0
+Joey Purp,1040.0,3.0
+Taylor Bennett,900.0,4.0
+Talib Kweli,1140.0,6.0
+Asher Roth,1000.0,4.0
+Blu,1060.0,4.0
+"Royce Da 5'9""",1200.0,8.0
+Big Boi,1120.0,5.0
+Black Star,980.0,7.0
+Common,1240.0,8.0
+Little Brother,645.0,5.0
+Mos Def,1280.0,8.0
+Black Thought,1100.0,5.0
+Elzhi,570.0,6.0
+Joe Budden,980.0,6.0
+The Roots,1180.0,9.0
+Nas,7200.0,7.0
+Fat Joe,6700.0,8.0
+The Carters,1120.0,3.0
+Cam’ron,1180.0,11.0
+Kanye West,9000.0,2.0
+Memphis Bleek,1020.0,8.0
+Eminem,8900.0,3.0
+Foxy Brown,1120.0,6.0
+The LOX,1060.0,7.0
+DMX,6900.0,7.0
+Busta Rhymes,7000.0,6.0
+Diddy,7200.0,7.0
+The Notorious B.I.G.,7700.0,5.0
+Big Pun,1220.0,8.0
+Method Man,7100.0,6.0
+Mobb Deep,6500.0,6.0
+Injury Reserve,980.0,4.0
+JulezJZ,980.0,0.0
+Westside Gunn,1280.0,6.0
+redveil,1160.0,3.0
+KayCyy,1000.0,1.0
+070 Shake,1260.0,1.0
+billy woods,900.0,4.0
+VRITRA,525.0,1.0
+Kilo Kish,940.0,6.0
+Ameer Vann,645.0,1.0
+Duckwrth,1240.0,2.0
+Choker,940.0,3.0
+Tierra Whack,1160.0,3.0
+Yeek,1080.0,2.0
+slowthai,1220.0,5.0
+IDK,1220.0,4.0
+Jaden,6900.0,3.0
+Smino,6600.0,3.0
+Kenny Mason,1120.0,3.0
+Roc Marciano,980.0,4.0
+Statik Selektah,1000.0,7.0
+Aaron May,1280.0,2.0
+Young Stoner Life,6600.0,3.0
+JID,7700.0,3.0
+LUCKI,6600.0,5.0
+Mike Dimes,1260.0,1.0
+NOT,7200.0,4.0
+Ben Reilly,1020.0,0.0
+MadeinTYO,1240.0,9.0
+Ken Carson,6500.0,2.0
+Dreamville,6700.0,2.0
+Kirk Knight,1020.0,1.0
+Childish Major,940.0,3.0
+Rejjie Snow,1200.0,4.0
+Erick the Architect,1160.0,1.0
+REASON,1100.0,3.0
+Lute,1180.0,3.0
+Kota the Friend,1240.0,3.0
+GoldLink,6500.0,5.0
+Lil Tecca,7700.0,3.0
+Lil Mosey,7100.0,5.0
+YNW Melly,7300.0,2.0
+Blueface,6800.0,2.0
+Lil Gnar,1120.0,7.0
+Lil Pump,6600.0,6.0
+Tay-K,6500.0,6.0
+6ix9ine,7100.0,3.0
+Yeat,7900.0,1.0
+DaBaby,8200.0,3.0
+Yung Pinch,1140.0,8.0
+Tee Grizzley,6700.0,7.0
+Nebu Kiniza,1080.0,4.0
+Ugly God,1040.0,5.0
+Kid Trunks,1000.0,4.0
+Almighty Jay,940.0,3.0
+Yung Bans,1120.0,5.0
+D. Savage,1200.0,6.0
+Cooliecut,1100.0,3.0
+Matt Ox,1080.0,4.0
+Craig Xen,1120.0,5.0
+Jay Critch,1140.0,4.0
+YoungBoy Never Broke Again,8300.0,2.0
+Quando Rondo,1220.0,3.0
+Moneybagg Yo,7700.0,6.0
+Polo G,8300.0,1.0
+Cordae,6700.0,4.0
+Scorey,1200.0,1.0
+YK Osiris,1140.0,4.0
+24kGoldn,7400.0,2.0
+Luh Kel,1180.0,2.0
+Landon Cube,1200.0,3.0
+iann dior,7600.0,2.0
+Tyla Yaweh,1240.0,5.0
+Yungeen Ace,1180.0,4.0
+NoCap,1220.0,3.0
+A Boogie Wit da Hoodie,8000.0,3.0
+SOB X RBE,1100.0,6.0
+Dbangz,980.0,4.0
+Yung Tory,940.0,5.0
+BlocBoy JB,1200.0,8.0
+Quin Nfn,1080.0,3.0
+DDG,1280.0,3.0
+SleazyWorld Go,6500.0,1.0
+Ronny J,1000.0,4.0
+Global Dan,900.0,4.0
+Fukkit,1040.0,6.0
+Smooky MarGielaa,645.0,3.0
+Robb Bank,980.0,4.0
+Lil Xan,1180.0,1.0
+Icy Narco,525.0,1.0
+Supreme Patty,540.0,1.0
+City Morgue,1240.0,2.0
+Keith Ape,1020.0,3.0
+Kap G,940.0,5.0
+Duwap Kaine,1000.0,4.0
+SoFaygo,1280.0,5.0
+AAP ANT,1180.0,6.0
+Remble,1160.0,1.0
+Lancey Foux,1080.0,2.0
+KANKAN,1200.0,2.0
+Autumn!,1220.0,4.0
+Summrs,1240.0,4.0
+tana,1240.0,3.0
+KAHDAMI,1220.0,3.0
+SSGKobe,1180.0,3.0
+Sided,630.0,0.0
+Oliver Francis,1060.0,6.0
+Fat Nick,1060.0,4.0
+Danger Incorporated,980.0,3.0
+Paris Shadows,960.0,4.0
+6 Dogs,1080.0,5.0
+COTIS,1020.0,3.0
+Unodavid,1020.0,3.0
+nothingnowhere.,1180.0,4.0
+The Kid LAROI,8300.0,1.0
+SAINt JHN,7000.0,5.0
+Fetty Wap,6900.0,5.0
+mike.,6900.0,3.0
+Bazzi,7200.0,3.0
+G-Eazy,7500.0,5.0
+Swae Lee,7700.0,2.0
+GASHI,1200.0,2.0
+Arizona Zervas,6700.0,3.0
+gianni  kyle,1100.0,1.0
+Reo Cragun,1000.0,3.0
+THEY.,1120.0,3.0
+anders,1040.0,5.0
+Nbdy,960.0,5.0
+Cousin Stizz,1060.0,5.0
+Maxo Kream,1200.0,8.0
+HoodRich Pablo Juan,1080.0,8.0
+Tm88,920.0,3.0
+Offset,7600.0,7.0
+Internet Money,7200.0,2.0
+Bankrol Hayden,1280.0,2.0
+benny blanco,7100.0,3.0
+Dro Kenji,1180.0,1.0
+Lil Skies,7000.0,3.0
+KillBunk,1220.0,1.0
+Fresco Trey,1120.0,3.0
+Amir Obe,960.0,2.0
+Anfa Rose,920.0,2.0
+FRVRFRIDAY,980.0,4.0
+A.CHAL,1000.0,1.0
+Jazz Cartier,1000.0,6.0
+Belly,1240.0,6.0
+YFN Lucci,1160.0,8.0
+Sage The Gemini,1280.0,6.0
+Speaker Knockerz,1060.0,5.0
+Soulja Boy,6900.0,9.0
+24hrs,1100.0,3.0
+BLEU,6700.0,4.0
+Shy Glizzy,1220.0,8.0
+Young M.A,1220.0,7.0
+Cam Meekins,660.0,3.0
+Luke Christopher,980.0,2.0
+Chris Webby,1220.0,3.0
+Huey Mack,600.0,2.0
+Skizzy Mars,1060.0,3.0
+Kid Quill,1040.0,3.0
+Nate Good,960.0,2.0
+Justin Stone,1060.0,4.0
+Aer,1020.0,2.0
+Hoodie Allen,1160.0,2.0
+Ryan Caraveo,1180.0,3.0
+Sammy Adams,1040.0,2.0
+Witt Lowry,1240.0,1.0
+Bryce Vine,6600.0,3.0
+Cal Scruby,1120.0,5.0
+Radical Something,495.0,1.0
+The Dean's List,280.0,2.0
+SonReal,980.0,5.0
+Madison Beer,7100.0,6.0
+Khalid,8500.0,2.0
+PRETTYMUCH,1220.0,4.0
+Julia Michaels,7400.0,5.0
+Jack  Jack,1240.0,6.0
+ZAYN,7500.0,4.0
+Olivia O'Brien,6800.0,6.0
+Ruel,6600.0,6.0
+Jessie Reyez,6700.0,5.0
+John K,1260.0,5.0
+Chelsea Cutler,6900.0,5.0
+Lauv,7700.0,3.0
+Bea Miller,6800.0,8.0
+MAX,6800.0,6.0
+Marc E. Bassy,1240.0,3.0
+Niall Horan,7500.0,4.0
+Why Don't We,7100.0,6.0
+AJ Mitchell,1240.0,7.0
+Christian French,1200.0,3.0
+Rich Brian,7000.0,1.0
+tobi lou,1220.0,1.0
+EARTHGANG,6500.0,5.0
+Logic,7700.0,5.0
+Futuristic,1080.0,2.0
+Lil Dicky,1240.0,3.0
+mansionz,1080.0,1.0
