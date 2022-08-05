@@ -7,17 +7,266 @@ output: html_notebook
 ```{r message=FALSE,warning=FALSE}
 library(tidyverse)
 library(spotifyr)
+library(Rspotify)
+library(httr)
+library(arrow)
 ```
 
 # Spotify API Credentials
 ```{r}
 # These are specific to this project so we can all use them 
-Sys.setenv(SPOTIFY_CLIENT_ID = '0afb90db8c28480bafd35f35823a5302')
-Sys.setenv(SPOTIFY_CLIENT_SECRET = 'bf9832cc9043459e939ff950c429b06e')
+#Sys.setenv(SPOTIFY_CLIENT_ID = '0afb90db8c28480bafd35f35823a5302')
+#Sys.setenv(SPOTIFY_CLIENT_SECRET = '2cc0060eaebc480db8234ac1fbad7bf8')
+Sys.setenv(SPOTIFY_CLIENT_ID = "c7b47eda15304b7c81a4cb1067bcb0e2")
+Sys.setenv(SPOTIFY_CLIENT_SECRET = '67b983bbd33040e1b69a0e17fb7d616f')
 
-access_token <- get_spotify_access_token()
+access_token = get_spotify_access_token()
+
 
 ```
+
+
+```{r}
+# Function that gets artists related to other artists from those artist's id's
+find_related_artists = function(artist_df,multi = FALSE,old_id = NULL){
+  # Check for overlaps from previous artists in case of a multi-layered related artist search
+  if(multi){
+    artist_df = artist_df %>%
+      filter(!id %in% old_id)
+  }
+  
+  
+  # Set data frame
+  related_artists = tibble("name" = character(),
+                            "related_to" = character(),
+                            "genres" = character(),
+                            "id" = character(),
+                           "related_id" = character(),
+                            "popularity" = numeric(),
+                            "followers" = numeric())
+  
+  # Loop through artists to get each of their related artists
+  for(i in unique(artist_df$id)){
+    temp_artist = artist_df$name[artist_df$id == i][1]
+    temp = spotifyr::get_related_artists(id = i)
+    temp2 = tibble("name" = temp$name,
+                   "related_to" = rep(temp_artist,nrow(temp)),
+                   "genres" = temp$genres,
+                   "id" = temp$id,
+                   "related_id" = i,
+                   "popularity" = temp$popularity,
+                   "followers" = temp$followers.total)
+    
+    # attach to overall data frame
+    related_artists = rbind(related_artists,temp2)
+  }
+  
+  # return full data frame
+  return(related_artists)
+}
+```
+
+
+```{r}
+# Function that puts together artists twice removed from original artists, by inputting a genre
+artist_relations = function(genre,AT,limit = 50){
+  
+  # Get initial artists and clean up data
+  artists = spotifyr::get_genre_artists(genre = genre, market = NULL, limit = limit,
+  offset = 0, authorization = get_spotify_access_token()) %>%
+  select(-href,-images,-type,-uri,-external_urls.spotify,-followers.href)
+  
+  # Get related artists 
+  related_artists1 = find_related_artists(artists)
+  
+  # Get artists related to those artists
+  related_artists2 = find_related_artists(related_artists1,TRUE,artists$id)
+  
+  # Combine all artists and rename columns
+  artists = tibble("name" = artists$name,
+                   "related_to" = NA,
+                   "genres" = artists$genres,
+                   "id" = artists$id,
+                   "related_id" = NA,
+                   "popularity" = artists$popularity,
+                   "followers" = artists$followers.total)
+  
+  all_artists = rbind(artists,related_artists1,related_artists2) %>%
+    rename(artist = name)
+  
+  # Return data frame
+  return(all_artists)
+  
+}
+  
+  
+```
+
+
+```{r warning = F}
+#setwd("..")
+#wd = getwd()
+all_artists = artist_relations("rap",access_token, limit = 2) #%>%
+ # write_csv(paste0(wd,"/data/artists_relations.csv"))
+  
+
+```
+
+
+```{r}
+get_top_10 = function(all_artists){
+
+  arts = all_artists$id %>%
+    na.omit() %>%
+    unique()
+  all_top_10 = tibble("song_id" = character(),
+                      "song_name" = character(),
+                      "song_popularity" = numeric(),
+                      "artist_id" = numeric())
+  for(art in arts){
+    top_10 = spotifyr::get_artist_top_tracks(art)
+    if(length(top_10)>0){
+      top_10 = top_10 %>%
+        select(id,name,popularity) %>%
+        rename(song_id = id,song_name = name, song_popularity = popularity)
+      top_10$artist_id = art
+    }
+    else{
+      top_10 = tibble("song_id" = NA,
+                      "song_name" = NA,
+                      "song_popularity" = NA,
+                      "artist_id" = art)
+    }
+    
+    
+    all_top_10 = rbind(all_top_10,top_10)
+  }
+  return(all_top_10)
+}
+
+```
+
+
+```{r}
+top_10 = get_top_10(all_artists)
+
+```
+
+
+```{r}
+song_feat = function(top_10){
+  song_features = tibble()
+  for(id in top_10$song_id){
+    if(!is.na(id)){
+      song = spotifyr::get_track_audio_features(id) %>%
+        select(-type,-id,-uri, -track_href, -analysis_url, -time_signature) 
+    }else{
+      song = rep(NA,12)
+    }
+    song_features = rbind(song_features,song)
+    
+  }
+  top_10_songs = cbind(top_10,song_features)
+  return(top_10_songs)
+  
+}
+
+```
+
+```{r}
+#setwd("..")
+#wd = getwd()
+top_10_w_feats = song_feat(top_10) #%>%
+  #write_csv(paste0(wd,"/data/artists_top_10_songs.csv"))
+
+  
+```
+
+```{r}
+artist_all_songs = function(artist_id){
+  artist_songs = try(get_artist_audio_features(artist_id),TRUE)
+  if (is.character(artist_songs)){
+    artist_songs = c("")
+  }else{
+  artist_songs = artist_songs %>%
+    select(artists) %>%
+    unnest(cols = c(artists)) %>%
+    select(name)
+  }
+  return(artist_songs)
+}
+
+collaboration = function(all_artists){
+  all_artists$collaborations = 0
+  artists = unique(all_artists$related_id)
+  for(art in artists){
+    colab_artists = artist_all_songs(art)
+      
+    related_arts = all_artists$artist[all_artists$related_id == art]
+    
+    for(rel in related_arts){
+      c = 0
+      c = length(which(colab_artists == rel))
+      all_artists$collaborations[all_artists$related_id == art & 
+                                   all_artists$artist == rel] = c
+    }
+      
+  }
+  
+  return(all_artists)
+}
+```
+
+
+```{r}
+setwd("..")
+wd = getwd()
+colabs = collaboration(all_artists) %>%
+  write_csv(paste0(wd,"/data/artists_relations.csv"))
+```
+
+
+
+```{r}
+get_spotify_data = function(genre,limit = 50){
+  setwd("..")
+  wd = getwd()
+  all_artist_relations = artist_relations(genre,limit)
+  all_artists = collaboration(all_artist_relations) %>%
+    write_feather("data/artists_relations.feather")
+  top_10_songs = get_top_10(all_artists_relations)
+  top_10_w_feats = song_feat(top_10_songs) %>%
+    write_feather(paste0(wd,"/data/songs_w_features.feather"))
+  
+  
+}
+get_spotify_data("rap",2)
+
+```
+
+```{r}
+setwd("..")
+wd = getwd()
+arts = read_feather(paste0(wd,"/data/artists_relations.feather"))
+
+
+```
+
+```{r}
+max(arts$collaborations)
+min(arts$collaborations)
+max(arts$popularity)
+min(arts$popularity)
+
+m1 = c()
+for(i in 1:nrow(arts)){
+  g = unlist(arts$genres[i])
+  m1 = append(m1,length(g))
+}
+max(m1)
+min(m1)
+```
+
 
 
 

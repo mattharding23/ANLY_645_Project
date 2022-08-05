@@ -1,4 +1,23 @@
 edge,edge_weight
+"('J. Cole', 'Drake')",2.0
+"('Meek Mill', 'Drake')",0.0
+"('DJ Khaled', 'Drake')",0.0
+"('Rick Ross', 'Drake')",10.0
+"('Wale', 'Drake')",0.0
+"('PARTYNEXTDOOR', 'Drake')",8.0
+"('2 Chainz', 'Drake')",7.0
+"('Tory Lanez', 'Drake')",0.0
+"('Future', 'Drake')",30.0
+"('Young Thug', 'Drake')",8.0
+"('Jeremih', 'Drake')",0.0
+"('Bryson Tiller', 'Drake')",0.0
+"('French Montana', 'Drake')",0.0
+"('Miguel', 'Drake')",0.0
+"('21 Savage', 'Drake')",4.0
+"('Metro Boomin', 'Drake')",0.0
+"('Migos', 'Drake')",0.0
+"('Ty Dolla ign', 'Drake')",4.0
+"('Lil Wayne', 'Drake')",32.0
 "('Wale', 'Big Sean')",2.0
 "('2 Chainz', 'Big Sean')",5.0
 "('Rick Ross', 'Big Sean')",3.0
@@ -759,6 +778,26 @@ edge,edge_weight
 "('IDK', 'Isaiah Rashad')",0.0
 "('Kota the Friend', 'Isaiah Rashad')",0.0
 "('GoldLink', 'Isaiah Rashad')",0.0
+"('NAV', 'Juice WRLD')",0.0
+"('Comethazine', 'Juice WRLD')",0.0
+"('Lil Yachty', 'Juice WRLD')",0.0
+"('Kodak Black', 'Juice WRLD')",0.0
+"('Trippie Redd', 'Juice WRLD')",4.0
+"('Lil Tecca', 'Juice WRLD')",0.0
+"('Lil Mosey', 'Juice WRLD')",0.0
+"('YNW Melly', 'Juice WRLD')",0.0
+"('YBN Nahmir', 'Juice WRLD')",0.0
+"('Blueface', 'Juice WRLD')",0.0
+"('Lil Gnar', 'Juice WRLD')",0.0
+"('Lil Pump', 'Juice WRLD')",0.0
+"('Flipp Dinero', 'Juice WRLD')",0.0
+"('Tay-K', 'Juice WRLD')",0.0
+"('Famous Dex', 'Juice WRLD')",0.0
+"('6ix9ine', 'Juice WRLD')",0.0
+"('Yeat', 'Juice WRLD')",0.0
+"('DaBaby', 'Juice WRLD')",0.0
+"('Yung Pinch', 'Juice WRLD')",0.0
+"('21 Savage', 'Juice WRLD')",0.0
 "('Flipp Dinero', 'NAV')",0.0
 "('YBN Nahmir', 'NAV')",0.0
 "('PnB Rock', 'NAV')",0.0
@@ -1139,6 +1178,26 @@ edge,edge_weight
 "('Unodavid', 'Yung Pinch')",0.0
 "('Yung Tory', 'Yung Pinch')",0.0
 "('nothingnowhere.', 'Yung Pinch')",0.0
+"('Rae Sremmurd', 'Post Malone')",0.0
+"('Huncho Jack', 'Post Malone')",0.0
+"('Tyla Yaweh', 'Post Malone')",0.0
+"('6LACK', 'Post Malone')",0.0
+"('AAP Ferg', 'Post Malone')",0.0
+"('Quality Control', 'Post Malone')",0.0
+"('Quavo', 'Post Malone')",5.0
+"('Young Thug', 'Post Malone')",2.0
+"('NAV', 'Post Malone')",0.0
+"('Migos', 'Post Malone')",0.0
+"('Metro Boomin', 'Post Malone')",0.0
+"('The Kid LAROI', 'Post Malone')",4.0
+"('SAINt JHN', 'Post Malone')",0.0
+"('Fetty Wap', 'Post Malone')",0.0
+"('PnB Rock', 'Post Malone')",0.0
+"('mike.', 'Post Malone')",0.0
+"('Bazzi', 'Post Malone')",0.0
+"('Lil Mosey', 'Post Malone')",0.0
+"('Jaden', 'Post Malone')",0.0
+"('G-Eazy', 'Post Malone')",2.0
 "('Desiigner', 'Rae Sremmurd')",0.0
 "('Swae Lee', 'Rae Sremmurd')",54.0
 "('AAP Ferg', 'Rae Sremmurd')",0.0

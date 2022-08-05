@@ -1772,9 +1772,19 @@ pre code {
 <h1>Libraries</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KHNwb3RpZnlyKVxuYGBgIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdodG1sdG9vbHMnOlxuICBtZXRob2QgICAgICAgICAgICAgICBmcm9tICAgICAgICAgXG4gIHByaW50Lmh0bWwgICAgICAgICAgIHRvb2xzOnJzdHVkaW9cbiAgcHJpbnQuc2hpbnkudGFnICAgICAgdG9vbHM6cnN0dWRpb1xuICBwcmludC5zaGlueS50YWcubGlzdCB0b29sczpyc3R1ZGlvXG4ifQ== -->
+<pre><code>Registered S3 methods overwritten by &#39;htmltools&#39;:
+  method               from         
+  print.html           tools:rstudio
+  print.shiny.tag      tools:rstudio
+  print.shiny.tag.list tools:rstudio</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KHNwb3RpZnlyKVxubGlicmFyeShSc3BvdGlmeSlcbmxpYnJhcnkoaHR0cilcbmxpYnJhcnkoYXJyb3cpXG5gYGAifQ== -->
 <pre class="r"><code>library(tidyverse)
-library(spotifyr)</code></pre>
+library(spotifyr)
+library(Rspotify)
+library(httr)
+library(arrow)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1783,20 +1793,326 @@ library(spotifyr)</code></pre>
 <h1>Spotify API Credentials</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGVzZSBhcmUgc3BlY2lmaWMgdG8gdGhpcyBwcm9qZWN0IHNvIHdlIGNhbiBhbGwgdXNlIHRoZW0gXG5TeXMuc2V0ZW52KFNQT1RJRllfQ0xJRU5UX0lEID0gJzBhZmI5MGRiOGMyODQ4MGJhZmQzNWYzNTgyM2E1MzAyJylcblN5cy5zZXRlbnYoU1BPVElGWV9DTElFTlRfU0VDUkVUID0gJ2JmOTgzMmNjOTA0MzQ1OWU5MzlmZjk1MGM0MjliMDZlJylcblxuYWNjZXNzX3Rva2VuIDwtIGdldF9zcG90aWZ5X2FjY2Vzc190b2tlbigpXG5cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGVzZSBhcmUgc3BlY2lmaWMgdG8gdGhpcyBwcm9qZWN0IHNvIHdlIGNhbiBhbGwgdXNlIHRoZW0gXG4jU3lzLnNldGVudihTUE9USUZZX0NMSUVOVF9JRCA9ICcwYWZiOTBkYjhjMjg0ODBiYWZkMzVmMzU4MjNhNTMwMicpXG4jU3lzLnNldGVudihTUE9USUZZX0NMSUVOVF9TRUNSRVQgPSAnMmNjMDA2MGVhZWJjNDgwZGI4MjM0YWMxZmJhZDdiZjgnKVxuU3lzLnNldGVudihTUE9USUZZX0NMSUVOVF9JRCA9IFwiYzdiNDdlZGExNTMwNGI3YzgxYTRjYjEwNjdiY2IwZTJcIilcblN5cy5zZXRlbnYoU1BPVElGWV9DTElFTlRfU0VDUkVUID0gJzY3Yjk4M2JiZDMzMDQwZTFiNjlhMGUxN2ZiN2Q2MTZmJylcblxuYWNjZXNzX3Rva2VuID0gZ2V0X3Nwb3RpZnlfYWNjZXNzX3Rva2VuKClcblxuXG5gYGAifQ== -->
 <pre class="r"><code># These are specific to this project so we can all use them 
-Sys.setenv(SPOTIFY_CLIENT_ID = &#39;0afb90db8c28480bafd35f35823a5302&#39;)
-Sys.setenv(SPOTIFY_CLIENT_SECRET = &#39;bf9832cc9043459e939ff950c429b06e&#39;)
+#Sys.setenv(SPOTIFY_CLIENT_ID = &#39;0afb90db8c28480bafd35f35823a5302&#39;)
+#Sys.setenv(SPOTIFY_CLIENT_SECRET = &#39;2cc0060eaebc480db8234ac1fbad7bf8&#39;)
+Sys.setenv(SPOTIFY_CLIENT_ID = &quot;c7b47eda15304b7c81a4cb1067bcb0e2&quot;)
+Sys.setenv(SPOTIFY_CLIENT_SECRET = &#39;67b983bbd33040e1b69a0e17fb7d616f&#39;)
 
-access_token &lt;- get_spotify_access_token()
+access_token = get_spotify_access_token()
 </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBGdW5jdGlvbiB0aGF0IGdldHMgYXJ0aXN0cyByZWxhdGVkIHRvIG90aGVyIGFydGlzdHMgZnJvbSB0aG9zZSBhcnRpc3QncyBpZCdzXG5maW5kX3JlbGF0ZWRfYXJ0aXN0cyA9IGZ1bmN0aW9uKGFydGlzdF9kZixtdWx0aSA9IEZBTFNFLG9sZF9pZCA9IE5VTEwpe1xuICAjIENoZWNrIGZvciBvdmVybGFwcyBmcm9tIHByZXZpb3VzIGFydGlzdHMgaW4gY2FzZSBvZiBhIG11bHRpLWxheWVyZWQgcmVsYXRlZCBhcnRpc3Qgc2VhcmNoXG4gIGlmKG11bHRpKXtcbiAgICBhcnRpc3RfZGYgPSBhcnRpc3RfZGYgJT4lXG4gICAgICBmaWx0ZXIoIWlkICVpbiUgb2xkX2lkKVxuICB9XG4gIFxuICBcbiAgIyBTZXQgZGF0YSBmcmFtZVxuICByZWxhdGVkX2FydGlzdHMgPSB0aWJibGUoXCJuYW1lXCIgPSBjaGFyYWN0ZXIoKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBcInJlbGF0ZWRfdG9cIiA9IGNoYXJhY3RlcigpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiZ2VucmVzXCIgPSBjaGFyYWN0ZXIoKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBcImlkXCIgPSBjaGFyYWN0ZXIoKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIFwicmVsYXRlZF9pZFwiID0gY2hhcmFjdGVyKCksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJwb3B1bGFyaXR5XCIgPSBudW1lcmljKCksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJmb2xsb3dlcnNcIiA9IG51bWVyaWMoKSlcbiAgXG4gICMgTG9vcCB0aHJvdWdoIGFydGlzdHMgdG8gZ2V0IGVhY2ggb2YgdGhlaXIgcmVsYXRlZCBhcnRpc3RzXG4gIGZvcihpIGluIHVuaXF1ZShhcnRpc3RfZGYkaWQpKXtcbiAgICB0ZW1wX2FydGlzdCA9IGFydGlzdF9kZiRuYW1lW2FydGlzdF9kZiRpZCA9PSBpXVsxXVxuICAgIHRlbXAgPSBzcG90aWZ5cjo6Z2V0X3JlbGF0ZWRfYXJ0aXN0cyhpZCA9IGkpXG4gICAgdGVtcDIgPSB0aWJibGUoXCJuYW1lXCIgPSB0ZW1wJG5hbWUsXG4gICAgICAgICAgICAgICAgICAgXCJyZWxhdGVkX3RvXCIgPSByZXAodGVtcF9hcnRpc3QsbnJvdyh0ZW1wKSksXG4gICAgICAgICAgICAgICAgICAgXCJnZW5yZXNcIiA9IHRlbXAkZ2VucmVzLFxuICAgICAgICAgICAgICAgICAgIFwiaWRcIiA9IHRlbXAkaWQsXG4gICAgICAgICAgICAgICAgICAgXCJyZWxhdGVkX2lkXCIgPSBpLFxuICAgICAgICAgICAgICAgICAgIFwicG9wdWxhcml0eVwiID0gdGVtcCRwb3B1bGFyaXR5LFxuICAgICAgICAgICAgICAgICAgIFwiZm9sbG93ZXJzXCIgPSB0ZW1wJGZvbGxvd2Vycy50b3RhbClcbiAgICBcbiAgICAjIGF0dGFjaCB0byBvdmVyYWxsIGRhdGEgZnJhbWVcbiAgICByZWxhdGVkX2FydGlzdHMgPSByYmluZChyZWxhdGVkX2FydGlzdHMsdGVtcDIpXG4gIH1cbiAgXG4gICMgcmV0dXJuIGZ1bGwgZGF0YSBmcmFtZVxuICByZXR1cm4ocmVsYXRlZF9hcnRpc3RzKVxufVxuYGBgIn0= -->
+<pre class="r"><code># Function that gets artists related to other artists from those artist&#39;s id&#39;s
+find_related_artists = function(artist_df,multi = FALSE,old_id = NULL){
+  # Check for overlaps from previous artists in case of a multi-layered related artist search
+  if(multi){
+    artist_df = artist_df %&gt;%
+      filter(!id %in% old_id)
+  }
+  
+  
+  # Set data frame
+  related_artists = tibble(&quot;name&quot; = character(),
+                            &quot;related_to&quot; = character(),
+                            &quot;genres&quot; = character(),
+                            &quot;id&quot; = character(),
+                           &quot;related_id&quot; = character(),
+                            &quot;popularity&quot; = numeric(),
+                            &quot;followers&quot; = numeric())
+  
+  # Loop through artists to get each of their related artists
+  for(i in unique(artist_df$id)){
+    temp_artist = artist_df$name[artist_df$id == i][1]
+    temp = spotifyr::get_related_artists(id = i)
+    temp2 = tibble(&quot;name&quot; = temp$name,
+                   &quot;related_to&quot; = rep(temp_artist,nrow(temp)),
+                   &quot;genres&quot; = temp$genres,
+                   &quot;id&quot; = temp$id,
+                   &quot;related_id&quot; = i,
+                   &quot;popularity&quot; = temp$popularity,
+                   &quot;followers&quot; = temp$followers.total)
+    
+    # attach to overall data frame
+    related_artists = rbind(related_artists,temp2)
+  }
+  
+  # return full data frame
+  return(related_artists)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBGdW5jdGlvbiB0aGF0IHB1dHMgdG9nZXRoZXIgYXJ0aXN0cyB0d2ljZSByZW1vdmVkIGZyb20gb3JpZ2luYWwgYXJ0aXN0cywgYnkgaW5wdXR0aW5nIGEgZ2VucmVcbmFydGlzdF9yZWxhdGlvbnMgPSBmdW5jdGlvbihnZW5yZSxBVCxsaW1pdCA9IDUwKXtcbiAgXG4gICMgR2V0IGluaXRpYWwgYXJ0aXN0cyBhbmQgY2xlYW4gdXAgZGF0YVxuICBhcnRpc3RzID0gc3BvdGlmeXI6OmdldF9nZW5yZV9hcnRpc3RzKGdlbnJlID0gZ2VucmUsIG1hcmtldCA9IE5VTEwsIGxpbWl0ID0gbGltaXQsXG4gIG9mZnNldCA9IDAsIGF1dGhvcml6YXRpb24gPSBnZXRfc3BvdGlmeV9hY2Nlc3NfdG9rZW4oKSkgJT4lXG4gIHNlbGVjdCgtaHJlZiwtaW1hZ2VzLC10eXBlLC11cmksLWV4dGVybmFsX3VybHMuc3BvdGlmeSwtZm9sbG93ZXJzLmhyZWYpXG4gIFxuICAjIEdldCByZWxhdGVkIGFydGlzdHMgXG4gIHJlbGF0ZWRfYXJ0aXN0czEgPSBmaW5kX3JlbGF0ZWRfYXJ0aXN0cyhhcnRpc3RzKVxuICBcbiAgIyBHZXQgYXJ0aXN0cyByZWxhdGVkIHRvIHRob3NlIGFydGlzdHNcbiAgcmVsYXRlZF9hcnRpc3RzMiA9IGZpbmRfcmVsYXRlZF9hcnRpc3RzKHJlbGF0ZWRfYXJ0aXN0czEsVFJVRSxhcnRpc3RzJGlkKVxuICBcbiAgIyBDb21iaW5lIGFsbCBhcnRpc3RzIGFuZCByZW5hbWUgY29sdW1uc1xuICBhcnRpc3RzID0gdGliYmxlKFwibmFtZVwiID0gYXJ0aXN0cyRuYW1lLFxuICAgICAgICAgICAgICAgICAgIFwicmVsYXRlZF90b1wiID0gTkEsXG4gICAgICAgICAgICAgICAgICAgXCJnZW5yZXNcIiA9IGFydGlzdHMkZ2VucmVzLFxuICAgICAgICAgICAgICAgICAgIFwiaWRcIiA9IGFydGlzdHMkaWQsXG4gICAgICAgICAgICAgICAgICAgXCJyZWxhdGVkX2lkXCIgPSBOQSxcbiAgICAgICAgICAgICAgICAgICBcInBvcHVsYXJpdHlcIiA9IGFydGlzdHMkcG9wdWxhcml0eSxcbiAgICAgICAgICAgICAgICAgICBcImZvbGxvd2Vyc1wiID0gYXJ0aXN0cyRmb2xsb3dlcnMudG90YWwpXG4gIFxuICBhbGxfYXJ0aXN0cyA9IHJiaW5kKGFydGlzdHMscmVsYXRlZF9hcnRpc3RzMSxyZWxhdGVkX2FydGlzdHMyKSAlPiVcbiAgICByZW5hbWUoYXJ0aXN0ID0gbmFtZSlcbiAgXG4gICMgUmV0dXJuIGRhdGEgZnJhbWVcbiAgcmV0dXJuKGFsbF9hcnRpc3RzKVxuICBcbn1cbiAgXG4gIFxuYGBgIn0= -->
+<pre class="r"><code># Function that puts together artists twice removed from original artists, by inputting a genre
+artist_relations = function(genre,AT,limit = 50){
+  
+  # Get initial artists and clean up data
+  artists = spotifyr::get_genre_artists(genre = genre, market = NULL, limit = limit,
+  offset = 0, authorization = get_spotify_access_token()) %&gt;%
+  select(-href,-images,-type,-uri,-external_urls.spotify,-followers.href)
+  
+  # Get related artists 
+  related_artists1 = find_related_artists(artists)
+  
+  # Get artists related to those artists
+  related_artists2 = find_related_artists(related_artists1,TRUE,artists$id)
+  
+  # Combine all artists and rename columns
+  artists = tibble(&quot;name&quot; = artists$name,
+                   &quot;related_to&quot; = NA,
+                   &quot;genres&quot; = artists$genres,
+                   &quot;id&quot; = artists$id,
+                   &quot;related_id&quot; = NA,
+                   &quot;popularity&quot; = artists$popularity,
+                   &quot;followers&quot; = artists$followers.total)
+  
+  all_artists = rbind(artists,related_artists1,related_artists2) %&gt;%
+    rename(artist = name)
+  
+  # Return data frame
+  return(all_artists)
+  
+}
+  
+  </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI3NldHdkKFwiLi5cIilcbiN3ZCA9IGdldHdkKClcbmFsbF9hcnRpc3RzID0gYXJ0aXN0X3JlbGF0aW9ucyhcInJhcFwiLGFjY2Vzc190b2tlbiwgbGltaXQgPSAyKSAjJT4lXG4gIyB3cml0ZV9jc3YocGFzdGUwKHdkLFwiL2RhdGEvYXJ0aXN0c19yZWxhdGlvbnMuY3N2XCIpKVxuICBcblxuYGBgIn0= -->
+<pre class="r"><code>#setwd(&quot;..&quot;)
+#wd = getwd()
+all_artists = artist_relations(&quot;rap&quot;,access_token, limit = 2) #%&gt;%
+ # write_csv(paste0(wd,&quot;/data/artists_relations.csv&quot;))
+  
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0X3RvcF8xMCA9IGZ1bmN0aW9uKGFsbF9hcnRpc3RzKXtcblxuICBhcnRzID0gYWxsX2FydGlzdHMkaWQgJT4lXG4gICAgbmEub21pdCgpICU+JVxuICAgIHVuaXF1ZSgpXG4gIGFsbF90b3BfMTAgPSB0aWJibGUoXCJzb25nX2lkXCIgPSBjaGFyYWN0ZXIoKSxcbiAgICAgICAgICAgICAgICAgICAgICBcInNvbmdfbmFtZVwiID0gY2hhcmFjdGVyKCksXG4gICAgICAgICAgICAgICAgICAgICAgXCJzb25nX3BvcHVsYXJpdHlcIiA9IG51bWVyaWMoKSxcbiAgICAgICAgICAgICAgICAgICAgICBcImFydGlzdF9pZFwiID0gbnVtZXJpYygpKVxuICBmb3IoYXJ0IGluIGFydHMpe1xuICAgIHRvcF8xMCA9IHNwb3RpZnlyOjpnZXRfYXJ0aXN0X3RvcF90cmFja3MoYXJ0KVxuICAgIGlmKGxlbmd0aCh0b3BfMTApPjApe1xuICAgICAgdG9wXzEwID0gdG9wXzEwICU+JVxuICAgICAgICBzZWxlY3QoaWQsbmFtZSxwb3B1bGFyaXR5KSAlPiVcbiAgICAgICAgcmVuYW1lKHNvbmdfaWQgPSBpZCxzb25nX25hbWUgPSBuYW1lLCBzb25nX3BvcHVsYXJpdHkgPSBwb3B1bGFyaXR5KVxuICAgICAgdG9wXzEwJGFydGlzdF9pZCA9IGFydFxuICAgIH1cbiAgICBlbHNle1xuICAgICAgdG9wXzEwID0gdGliYmxlKFwic29uZ19pZFwiID0gTkEsXG4gICAgICAgICAgICAgICAgICAgICAgXCJzb25nX25hbWVcIiA9IE5BLFxuICAgICAgICAgICAgICAgICAgICAgIFwic29uZ19wb3B1bGFyaXR5XCIgPSBOQSxcbiAgICAgICAgICAgICAgICAgICAgICBcImFydGlzdF9pZFwiID0gYXJ0KVxuICAgIH1cbiAgICBcbiAgICBcbiAgICBhbGxfdG9wXzEwID0gcmJpbmQoYWxsX3RvcF8xMCx0b3BfMTApXG4gIH1cbiAgcmV0dXJuKGFsbF90b3BfMTApXG59XG5cbmBgYCJ9 -->
+<pre class="r"><code>get_top_10 = function(all_artists){
+
+  arts = all_artists$id %&gt;%
+    na.omit() %&gt;%
+    unique()
+  all_top_10 = tibble(&quot;song_id&quot; = character(),
+                      &quot;song_name&quot; = character(),
+                      &quot;song_popularity&quot; = numeric(),
+                      &quot;artist_id&quot; = numeric())
+  for(art in arts){
+    top_10 = spotifyr::get_artist_top_tracks(art)
+    if(length(top_10)&gt;0){
+      top_10 = top_10 %&gt;%
+        select(id,name,popularity) %&gt;%
+        rename(song_id = id,song_name = name, song_popularity = popularity)
+      top_10$artist_id = art
+    }
+    else{
+      top_10 = tibble(&quot;song_id&quot; = NA,
+                      &quot;song_name&quot; = NA,
+                      &quot;song_popularity&quot; = NA,
+                      &quot;artist_id&quot; = art)
+    }
+    
+    
+    all_top_10 = rbind(all_top_10,top_10)
+  }
+  return(all_top_10)
+}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudG9wXzEwID0gZ2V0X3RvcF8xMChhbGxfYXJ0aXN0cylcblxuYGBgIn0= -->
+<pre class="r"><code>top_10 = get_top_10(all_artists)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc29uZ19mZWF0ID0gZnVuY3Rpb24odG9wXzEwKXtcbiAgc29uZ19mZWF0dXJlcyA9IHRpYmJsZSgpXG4gIGZvcihpZCBpbiB0b3BfMTAkc29uZ19pZCl7XG4gICAgaWYoIWlzLm5hKGlkKSl7XG4gICAgICBzb25nID0gc3BvdGlmeXI6OmdldF90cmFja19hdWRpb19mZWF0dXJlcyhpZCkgJT4lXG4gICAgICAgIHNlbGVjdCgtdHlwZSwtaWQsLXVyaSwgLXRyYWNrX2hyZWYsIC1hbmFseXNpc191cmwsIC10aW1lX3NpZ25hdHVyZSkgXG4gICAgfWVsc2V7XG4gICAgICBzb25nID0gcmVwKE5BLDEyKVxuICAgIH1cbiAgICBzb25nX2ZlYXR1cmVzID0gcmJpbmQoc29uZ19mZWF0dXJlcyxzb25nKVxuICAgIFxuICB9XG4gIHRvcF8xMF9zb25ncyA9IGNiaW5kKHRvcF8xMCxzb25nX2ZlYXR1cmVzKVxuICByZXR1cm4odG9wXzEwX3NvbmdzKVxuICBcbn1cblxuYGBgIn0= -->
+<pre class="r"><code>song_feat = function(top_10){
+  song_features = tibble()
+  for(id in top_10$song_id){
+    if(!is.na(id)){
+      song = spotifyr::get_track_audio_features(id) %&gt;%
+        select(-type,-id,-uri, -track_href, -analysis_url, -time_signature) 
+    }else{
+      song = rep(NA,12)
+    }
+    song_features = rbind(song_features,song)
+    
+  }
+  top_10_songs = cbind(top_10,song_features)
+  return(top_10_songs)
+  
+}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI3NldHdkKFwiLi5cIilcbiN3ZCA9IGdldHdkKClcbnRvcF8xMF93X2ZlYXRzID0gc29uZ19mZWF0KHRvcF8xMCkgIyU+JVxuYGBgIn0= -->
+<pre class="r"><code>#setwd(&quot;..&quot;)
+#wd = getwd()
+top_10_w_feats = song_feat(top_10) #%&gt;%</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVxdWVzdCBmYWlsZWQgWzUwM10uIFJldHJ5aW5nIGluIDEuOCBzZWNvbmRzLi4uXG5SZXF1ZXN0IGZhaWxlZCBbNTAzXS4gUmV0cnlpbmcgaW4gMSBzZWNvbmRzLi4uXG5SZXF1ZXN0IGZhaWxlZCBbNTAzXS4gUmV0cnlpbmcgaW4gMSBzZWNvbmRzLi4uXG4ifQ== -->
+<pre><code>Request failed [503]. Retrying in 1.8 seconds...
+Request failed [503]. Retrying in 1 seconds...
+Request failed [503]. Retrying in 1 seconds...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXJ0aXN0X2FsbF9zb25ncyA9IGZ1bmN0aW9uKGFydGlzdF9pZCl7XG4gIGFydGlzdF9zb25ncyA9IHRyeShnZXRfYXJ0aXN0X2F1ZGlvX2ZlYXR1cmVzKGFydGlzdF9pZCksVFJVRSlcbiAgaWYgKGlzLmNoYXJhY3RlcihhcnRpc3Rfc29uZ3MpKXtcbiAgICBhcnRpc3Rfc29uZ3MgPSBjKFwiXCIpXG4gIH1lbHNle1xuICBhcnRpc3Rfc29uZ3MgPSBhcnRpc3Rfc29uZ3MgJT4lXG4gICAgc2VsZWN0KGFydGlzdHMpICU+JVxuICAgIHVubmVzdChjb2xzID0gYyhhcnRpc3RzKSkgJT4lXG4gICAgc2VsZWN0KG5hbWUpXG4gIH1cbiAgcmV0dXJuKGFydGlzdF9zb25ncylcbn1cblxuY29sbGFib3JhdGlvbiA9IGZ1bmN0aW9uKGFsbF9hcnRpc3RzKXtcbiAgYWxsX2FydGlzdHMkY29sbGFib3JhdGlvbnMgPSAwXG4gIGFydGlzdHMgPSB1bmlxdWUoYWxsX2FydGlzdHMkcmVsYXRlZF9pZClcbiAgZm9yKGFydCBpbiBhcnRpc3RzKXtcbiAgICBjb2xhYl9hcnRpc3RzID0gYXJ0aXN0X2FsbF9zb25ncyhhcnQpXG4gICAgICBcbiAgICByZWxhdGVkX2FydHMgPSBhbGxfYXJ0aXN0cyRhcnRpc3RbYWxsX2FydGlzdHMkcmVsYXRlZF9pZCA9PSBhcnRdXG4gICAgXG4gICAgZm9yKHJlbCBpbiByZWxhdGVkX2FydHMpe1xuICAgICAgYyA9IDBcbiAgICAgIGMgPSBsZW5ndGgod2hpY2goY29sYWJfYXJ0aXN0cyA9PSByZWwpKVxuICAgICAgYWxsX2FydGlzdHMkY29sbGFib3JhdGlvbnNbYWxsX2FydGlzdHMkcmVsYXRlZF9pZCA9PSBhcnQgJiBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYWxsX2FydGlzdHMkYXJ0aXN0ID09IHJlbF0gPSBjXG4gICAgfVxuICAgICAgXG4gIH1cbiAgXG4gIHJldHVybihhbGxfYXJ0aXN0cylcbn1cbmBgYCJ9 -->
+<pre class="r"><code>artist_all_songs = function(artist_id){
+  artist_songs = try(get_artist_audio_features(artist_id),TRUE)
+  if (is.character(artist_songs)){
+    artist_songs = c(&quot;&quot;)
+  }else{
+  artist_songs = artist_songs %&gt;%
+    select(artists) %&gt;%
+    unnest(cols = c(artists)) %&gt;%
+    select(name)
+  }
+  return(artist_songs)
+}
+
+collaboration = function(all_artists){
+  all_artists$collaborations = 0
+  artists = unique(all_artists$related_id)
+  for(art in artists){
+    colab_artists = artist_all_songs(art)
+      
+    related_arts = all_artists$artist[all_artists$related_id == art]
+    
+    for(rel in related_arts){
+      c = 0
+      c = length(which(colab_artists == rel))
+      all_artists$collaborations[all_artists$related_id == art &amp; 
+                                   all_artists$artist == rel] = c
+    }
+      
+  }
+  
+  return(all_artists)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0d2QoXCIuLlwiKVxuYGBgIn0= -->
+<pre class="r"><code>setwd(&quot;..&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogVGhlIHdvcmtpbmcgZGlyZWN0b3J5IHdhcyBjaGFuZ2VkIHRvIC9Vc2Vycy9tYXR0aGFyZGluZy9Eb2N1bWVudHMvR2VvcmdldG93bi9TdW1tZXJfMjAyMi9Bbmx5XzY0NS9Qcm9qZWN0L0FOTFlfNjQ1X1Byb2plY3QgaW5zaWRlIGEgbm90ZWJvb2sgY2h1bmsuIFRoZSB3b3JraW5nIGRpcmVjdG9yeSB3aWxsIGJlIHJlc2V0IHdoZW4gdGhlIGNodW5rIGlzIGZpbmlzaGVkIHJ1bm5pbmcuIFVzZSB0aGUga25pdHIgcm9vdC5kaXIgb3B0aW9uIGluIHRoZSBzZXR1cCBjaHVuayB0byBjaGFuZ2UgdGhlIHdvcmtpbmcgZGlyZWN0b3J5IGZvciBub3RlYm9vayBjaHVua3MuXG4ifQ== -->
+<pre><code>Warning: The working directory was changed to /Users/mattharding/Documents/Georgetown/Summer_2022/Anly_645/Project/ANLY_645_Project inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the working directory for notebook chunks.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2QgPSBnZXR3ZCgpXG5jb2xhYnMgPSBjb2xsYWJvcmF0aW9uKGFsbF9hcnRpc3RzKSAlPiVcbiAgd3JpdGVfY3N2KHBhc3RlMCh3ZCxcIi9kYXRhL2FydGlzdHNfcmVsYXRpb25zLmNzdlwiKSlcbmBgYCJ9 -->
+<pre class="r"><code>wd = getwd()
+colabs = collaboration(all_artists) %&gt;%
+  write_csv(paste0(wd,&quot;/data/artists_relations.csv&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0X3Nwb3RpZnlfZGF0YSA9IGZ1bmN0aW9uKGdlbnJlLGxpbWl0ID0gNTApe1xuICBzZXR3ZChcIi4uXCIpXG4gIHdkID0gZ2V0d2QoKVxuICBhbGxfYXJ0aXN0X3JlbGF0aW9ucyA9IGFydGlzdF9yZWxhdGlvbnMoZ2VucmUsbGltaXQpXG4gIGFsbF9hcnRpc3RzID0gY29sbGFib3JhdGlvbihhbGxfYXJ0aXN0X3JlbGF0aW9ucykgJT4lXG4gICAgd3JpdGVfZmVhdGhlcihwYXN0ZTAod2QsXCIvZGF0YS9hcnRpc3RzX3JlbGF0aW9ucy5mZWF0aGVyXCIpKVxuICB0b3BfMTBfc29uZ3MgPSBnZXRfdG9wXzEwKGFsbF9hcnRpc3RzKVxuICB0b3BfMTBfd19mZWF0cyA9IHNvbmdfZmVhdCh0b3BfMTBfc29uZ3MpICU+JVxuICAgIHdyaXRlX2ZlYXRoZXIocGFzdGUwKHdkLFwiL2RhdGEvc29uZ3Nfd19mZWF0dXJlcy5mZWF0aGVyXCIpKVxuICBcbiAgXG59XG5nZXRfc3BvdGlmeV9kYXRhKFwicmFwXCIsMilcbmBgYCJ9 -->
+<pre class="r"><code>get_spotify_data = function(genre,limit = 50){
+  setwd(&quot;..&quot;)
+  wd = getwd()
+  all_artist_relations = artist_relations(genre,limit)
+  all_artists = collaboration(all_artist_relations) %&gt;%
+    write_feather(paste0(wd,&quot;/data/artists_relations.feather&quot;))
+  top_10_songs = get_top_10(all_artists)
+  top_10_w_feats = song_feat(top_10_songs) %&gt;%
+    write_feather(paste0(wd,&quot;/data/songs_w_features.feather&quot;))
+  
+  
+}
+get_spotify_data(&quot;rap&quot;,2)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVxdWVzdCBmYWlsZWQgWzUwM10uIFJldHJ5aW5nIGluIDEgc2Vjb25kcy4uLlxuV2FybmluZyBpbiByYmluZChkZXBhcnNlLmxldmVsLCAuLi4pIDpcbiAgbnVtYmVyIG9mIGNvbHVtbnMgb2YgcmVzdWx0LCAxMiwgaXMgbm90IGEgbXVsdGlwbGUgb2YgdmVjdG9yIGxlbmd0aCAxMyBvZiBhcmcgMlxuUmVxdWVzdCBmYWlsZWQgWzUwM10uIFJldHJ5aW5nIGluIDEgc2Vjb25kcy4uLlxuUmVxdWVzdCBmYWlsZWQgWzUwM10uIFJldHJ5aW5nIGluIDEuOCBzZWNvbmRzLi4uXG5SZXF1ZXN0IGZhaWxlZCBbNTAzXS4gUmV0cnlpbmcgaW4gMSBzZWNvbmRzLi4uXG4ifQ== -->
+<pre><code>Request failed [503]. Retrying in 1 seconds...
+Warning in rbind(deparse.level, ...) :
+  number of columns of result, 12, is not a multiple of vector length 13 of arg 2
+Request failed [503]. Retrying in 1 seconds...
+Request failed [503]. Retrying in 1.8 seconds...
+Request failed [503]. Retrying in 1 seconds...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gYHNlbGVjdCgpYDpcbiEgQ2FuJ3Qgc3Vic2V0IGNvbHVtbnMgdGhhdCBkb24ndCBleGlzdC5cbuKcliBDb2x1bW4gYHR5cGVgIGRvZXNuJ3QgZXhpc3QuXG5CYWNrdHJhY2U6XG4gIDEuIGdsb2JhbCBnZXRfc3BvdGlmeV9kYXRhKFwicmFwXCIsIDIpXG4gIDcuIGRwbHlyOjo6c2VsZWN0LmRhdGEuZnJhbWUoLi4uKVxuIDEwLiB0aWR5c2VsZWN0OjpldmFsX3NlbGVjdChleHByKGMoLi4uKSksIC5kYXRhKVxuIDExLiB0aWR5c2VsZWN0Ojo6ZXZhbF9zZWxlY3RfaW1wbCguLi4pXG4gMjAuIHRpZHlzZWxlY3Q6Ojp2YXJzX3NlbGVjdF9ldmFsKC4uLilcbiAgICAgLi4uXG4gMjMuIHRpZHlzZWxlY3Q6OjpyZWR1Y2Vfc2Vscyhub2RlLCBkYXRhX21hc2ssIGNvbnRleHRfbWFzaywgaW5pdCA9IGluaXQpXG4gMjQuIHRpZHlzZWxlY3Q6Ojp3YWxrX2RhdGFfdHJlZShuZXcsIGRhdGFfbWFzaywgY29udGV4dF9tYXNrKVxuIDI1LiB0aWR5c2VsZWN0Ojo6YXNfaW5kaWNlc19zZWxfaW1wbCguLi4pXG4gMjYuIHRpZHlzZWxlY3Q6Ojphc19pbmRpY2VzX2ltcGwoeCwgdmFycywgY2FsbCA9IGNhbGwsIHN0cmljdCA9IHN0cmljdClcbiAyNy4gdGlkeXNlbGVjdDo6OmNocl9hc19sb2NhdGlvbnMoeCwgdmFycywgY2FsbCA9IGNhbGwpXG4ifQ== -->
+<pre><code>Error in `select()`:
+! Can&#39;t subset columns that don&#39;t exist.
+✖ Column `type` doesn&#39;t exist.
+Backtrace:
+  1. global get_spotify_data(&quot;rap&quot;, 2)
+  7. dplyr:::select.data.frame(...)
+ 10. tidyselect::eval_select(expr(c(...)), .data)
+ 11. tidyselect:::eval_select_impl(...)
+ 20. tidyselect:::vars_select_eval(...)
+     ...
+ 23. tidyselect:::reduce_sels(node, data_mask, context_mask, init = init)
+ 24. tidyselect:::walk_data_tree(new, data_mask, context_mask)
+ 25. tidyselect:::as_indices_sel_impl(...)
+ 26. tidyselect:::as_indices_impl(x, vars, call = call, strict = strict)
+ 27. tidyselect:::chr_as_locations(x, vars, call = call)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0d2QoXCIuLlwiKVxuYGBgIn0= -->
+<pre class="r"><code>setwd(&quot;..&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogVGhlIHdvcmtpbmcgZGlyZWN0b3J5IHdhcyBjaGFuZ2VkIHRvIC9Vc2Vycy9tYXR0aGFyZGluZy9Eb2N1bWVudHMvR2VvcmdldG93bi9TdW1tZXJfMjAyMi9Bbmx5XzY0NS9Qcm9qZWN0L0FOTFlfNjQ1X1Byb2plY3QgaW5zaWRlIGEgbm90ZWJvb2sgY2h1bmsuIFRoZSB3b3JraW5nIGRpcmVjdG9yeSB3aWxsIGJlIHJlc2V0IHdoZW4gdGhlIGNodW5rIGlzIGZpbmlzaGVkIHJ1bm5pbmcuIFVzZSB0aGUga25pdHIgcm9vdC5kaXIgb3B0aW9uIGluIHRoZSBzZXR1cCBjaHVuayB0byBjaGFuZ2UgdGhlIHdvcmtpbmcgZGlyZWN0b3J5IGZvciBub3RlYm9vayBjaHVua3MuXG4ifQ== -->
+<pre><code>Warning: The working directory was changed to /Users/mattharding/Documents/Georgetown/Summer_2022/Anly_645/Project/ANLY_645_Project inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the working directory for notebook chunks.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2QgPSBnZXR3ZCgpXG5hcnRzID0gcmVhZF9mZWF0aGVyKHBhc3RlMCh3ZCxcIi9kYXRhL2FydGlzdHNfcmVsYXRpb25zLmZlYXRoZXJcIikpXG5cblxuYGBgIn0= -->
+<pre class="r"><code>wd = getwd()
+arts = read_feather(paste0(wd,&quot;/data/artists_relations.feather&quot;))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF4KGFydHMkY29sbGFib3JhdGlvbnMpXG5taW4oYXJ0cyRjb2xsYWJvcmF0aW9ucylcbm1heChhcnRzJHBvcHVsYXJpdHkpXG5taW4oYXJ0cyRwb3B1bGFyaXR5KVxuXG5tMSA9IGMoKVxuZm9yKGkgaW4gMTpucm93KGFydHMpKXtcbiAgZyA9IHVubGlzdChhcnRzJGdlbnJlc1tpXSlcbiAgbTEgPSBhcHBlbmQobTEsbGVuZ3RoKGcpKVxufVxubWF4KG0xKVxubWluKG0xKVxuYGBgIn0= -->
+<pre class="r"><code>max(arts$collaborations)
+min(arts$collaborations)
+max(arts$popularity)
+min(arts$popularity)
+
+m1 = c()
+for(i in 1:nrow(arts)){
+  g = unlist(arts$genres[i])
+  m1 = append(m1,length(g))
+}
+max(m1)
+min(m1)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBMaWJyYXJpZXMKYGBge3IgbWVzc2FnZT1GQUxTRSx3YXJuaW5nPUZBTFNFfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShzcG90aWZ5cikKYGBgCgojIFNwb3RpZnkgQVBJIENyZWRlbnRpYWxzCmBgYHtyfQojIFRoZXNlIGFyZSBzcGVjaWZpYyB0byB0aGlzIHByb2plY3Qgc28gd2UgY2FuIGFsbCB1c2UgdGhlbSAKU3lzLnNldGVudihTUE9USUZZX0NMSUVOVF9JRCA9ICcwYWZiOTBkYjhjMjg0ODBiYWZkMzVmMzU4MjNhNTMwMicpClN5cy5zZXRlbnYoU1BPVElGWV9DTElFTlRfU0VDUkVUID0gJ2JmOTgzMmNjOTA0MzQ1OWU5MzlmZjk1MGM0MjliMDZlJykKCmFjY2Vzc190b2tlbiA8LSBnZXRfc3BvdGlmeV9hY2Nlc3NfdG9rZW4oKQoKYGBgCgoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBMaWJyYXJpZXMKYGBge3IgbWVzc2FnZT1GQUxTRSx3YXJuaW5nPUZBTFNFfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShzcG90aWZ5cikKbGlicmFyeShSc3BvdGlmeSkKbGlicmFyeShodHRyKQpsaWJyYXJ5KGFycm93KQpgYGAKCiMgU3BvdGlmeSBBUEkgQ3JlZGVudGlhbHMKYGBge3J9CiMgVGhlc2UgYXJlIHNwZWNpZmljIHRvIHRoaXMgcHJvamVjdCBzbyB3ZSBjYW4gYWxsIHVzZSB0aGVtIAojU3lzLnNldGVudihTUE9USUZZX0NMSUVOVF9JRCA9ICcwYWZiOTBkYjhjMjg0ODBiYWZkMzVmMzU4MjNhNTMwMicpCiNTeXMuc2V0ZW52KFNQT1RJRllfQ0xJRU5UX1NFQ1JFVCA9ICcyY2MwMDYwZWFlYmM0ODBkYjgyMzRhYzFmYmFkN2JmOCcpClN5cy5zZXRlbnYoU1BPVElGWV9DTElFTlRfSUQgPSAiYzdiNDdlZGExNTMwNGI3YzgxYTRjYjEwNjdiY2IwZTIiKQpTeXMuc2V0ZW52KFNQT1RJRllfQ0xJRU5UX1NFQ1JFVCA9ICc2N2I5ODNiYmQzMzA0MGUxYjY5YTBlMTdmYjdkNjE2ZicpCgphY2Nlc3NfdG9rZW4gPSBnZXRfc3BvdGlmeV9hY2Nlc3NfdG9rZW4oKQoKCmBgYAoKCmBgYHtyfQojIEZ1bmN0aW9uIHRoYXQgZ2V0cyBhcnRpc3RzIHJlbGF0ZWQgdG8gb3RoZXIgYXJ0aXN0cyBmcm9tIHRob3NlIGFydGlzdCdzIGlkJ3MKZmluZF9yZWxhdGVkX2FydGlzdHMgPSBmdW5jdGlvbihhcnRpc3RfZGYsbXVsdGkgPSBGQUxTRSxvbGRfaWQgPSBOVUxMKXsKICAjIENoZWNrIGZvciBvdmVybGFwcyBmcm9tIHByZXZpb3VzIGFydGlzdHMgaW4gY2FzZSBvZiBhIG11bHRpLWxheWVyZWQgcmVsYXRlZCBhcnRpc3Qgc2VhcmNoCiAgaWYobXVsdGkpewogICAgYXJ0aXN0X2RmID0gYXJ0aXN0X2RmICU+JQogICAgICBmaWx0ZXIoIWlkICVpbiUgb2xkX2lkKQogIH0KICAKICAKICAjIFNldCBkYXRhIGZyYW1lCiAgcmVsYXRlZF9hcnRpc3RzID0gdGliYmxlKCJuYW1lIiA9IGNoYXJhY3RlcigpLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgInJlbGF0ZWRfdG8iID0gY2hhcmFjdGVyKCksCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiZ2VucmVzIiA9IGNoYXJhY3RlcigpLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgImlkIiA9IGNoYXJhY3RlcigpLAogICAgICAgICAgICAgICAgICAgICAgICAgICAicmVsYXRlZF9pZCIgPSBjaGFyYWN0ZXIoKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJwb3B1bGFyaXR5IiA9IG51bWVyaWMoKSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJmb2xsb3dlcnMiID0gbnVtZXJpYygpKQogIAogICMgTG9vcCB0aHJvdWdoIGFydGlzdHMgdG8gZ2V0IGVhY2ggb2YgdGhlaXIgcmVsYXRlZCBhcnRpc3RzCiAgZm9yKGkgaW4gdW5pcXVlKGFydGlzdF9kZiRpZCkpewogICAgdGVtcF9hcnRpc3QgPSBhcnRpc3RfZGYkbmFtZVthcnRpc3RfZGYkaWQgPT0gaV1bMV0KICAgIHRlbXAgPSBzcG90aWZ5cjo6Z2V0X3JlbGF0ZWRfYXJ0aXN0cyhpZCA9IGkpCiAgICB0ZW1wMiA9IHRpYmJsZSgibmFtZSIgPSB0ZW1wJG5hbWUsCiAgICAgICAgICAgICAgICAgICAicmVsYXRlZF90byIgPSByZXAodGVtcF9hcnRpc3QsbnJvdyh0ZW1wKSksCiAgICAgICAgICAgICAgICAgICAiZ2VucmVzIiA9IHRlbXAkZ2VucmVzLAogICAgICAgICAgICAgICAgICAgImlkIiA9IHRlbXAkaWQsCiAgICAgICAgICAgICAgICAgICAicmVsYXRlZF9pZCIgPSBpLAogICAgICAgICAgICAgICAgICAgInBvcHVsYXJpdHkiID0gdGVtcCRwb3B1bGFyaXR5LAogICAgICAgICAgICAgICAgICAgImZvbGxvd2VycyIgPSB0ZW1wJGZvbGxvd2Vycy50b3RhbCkKICAgIAogICAgIyBhdHRhY2ggdG8gb3ZlcmFsbCBkYXRhIGZyYW1lCiAgICByZWxhdGVkX2FydGlzdHMgPSByYmluZChyZWxhdGVkX2FydGlzdHMsdGVtcDIpCiAgfQogIAogICMgcmV0dXJuIGZ1bGwgZGF0YSBmcmFtZQogIHJldHVybihyZWxhdGVkX2FydGlzdHMpCn0KYGBgCgoKYGBge3J9CiMgRnVuY3Rpb24gdGhhdCBwdXRzIHRvZ2V0aGVyIGFydGlzdHMgdHdpY2UgcmVtb3ZlZCBmcm9tIG9yaWdpbmFsIGFydGlzdHMsIGJ5IGlucHV0dGluZyBhIGdlbnJlCmFydGlzdF9yZWxhdGlvbnMgPSBmdW5jdGlvbihnZW5yZSxBVCxsaW1pdCA9IDUwKXsKICAKICAjIEdldCBpbml0aWFsIGFydGlzdHMgYW5kIGNsZWFuIHVwIGRhdGEKICBhcnRpc3RzID0gc3BvdGlmeXI6OmdldF9nZW5yZV9hcnRpc3RzKGdlbnJlID0gZ2VucmUsIG1hcmtldCA9IE5VTEwsIGxpbWl0ID0gbGltaXQsCiAgb2Zmc2V0ID0gMCwgYXV0aG9yaXphdGlvbiA9IGdldF9zcG90aWZ5X2FjY2Vzc190b2tlbigpKSAlPiUKICBzZWxlY3QoLWhyZWYsLWltYWdlcywtdHlwZSwtdXJpLC1leHRlcm5hbF91cmxzLnNwb3RpZnksLWZvbGxvd2Vycy5ocmVmKQogIAogICMgR2V0IHJlbGF0ZWQgYXJ0aXN0cyAKICByZWxhdGVkX2FydGlzdHMxID0gZmluZF9yZWxhdGVkX2FydGlzdHMoYXJ0aXN0cykKICAKICAjIEdldCBhcnRpc3RzIHJlbGF0ZWQgdG8gdGhvc2UgYXJ0aXN0cwogIHJlbGF0ZWRfYXJ0aXN0czIgPSBmaW5kX3JlbGF0ZWRfYXJ0aXN0cyhyZWxhdGVkX2FydGlzdHMxLFRSVUUsYXJ0aXN0cyRpZCkKICAKICAjIENvbWJpbmUgYWxsIGFydGlzdHMgYW5kIHJlbmFtZSBjb2x1bW5zCiAgYXJ0aXN0cyA9IHRpYmJsZSgibmFtZSIgPSBhcnRpc3RzJG5hbWUsCiAgICAgICAgICAgICAgICAgICAicmVsYXRlZF90byIgPSBOQSwKICAgICAgICAgICAgICAgICAgICJnZW5yZXMiID0gYXJ0aXN0cyRnZW5yZXMsCiAgICAgICAgICAgICAgICAgICAiaWQiID0gYXJ0aXN0cyRpZCwKICAgICAgICAgICAgICAgICAgICJyZWxhdGVkX2lkIiA9IE5BLAogICAgICAgICAgICAgICAgICAgInBvcHVsYXJpdHkiID0gYXJ0aXN0cyRwb3B1bGFyaXR5LAogICAgICAgICAgICAgICAgICAgImZvbGxvd2VycyIgPSBhcnRpc3RzJGZvbGxvd2Vycy50b3RhbCkKICAKICBhbGxfYXJ0aXN0cyA9IHJiaW5kKGFydGlzdHMscmVsYXRlZF9hcnRpc3RzMSxyZWxhdGVkX2FydGlzdHMyKSAlPiUKICAgIHJlbmFtZShhcnRpc3QgPSBuYW1lKQogIAogICMgUmV0dXJuIGRhdGEgZnJhbWUKICByZXR1cm4oYWxsX2FydGlzdHMpCiAgCn0KICAKICAKYGBgCgoKYGBge3Igd2FybmluZyA9IEZ9CiNzZXR3ZCgiLi4iKQojd2QgPSBnZXR3ZCgpCmFsbF9hcnRpc3RzID0gYXJ0aXN0X3JlbGF0aW9ucygicmFwIixhY2Nlc3NfdG9rZW4sIGxpbWl0ID0gMikgIyU+JQogIyB3cml0ZV9jc3YocGFzdGUwKHdkLCIvZGF0YS9hcnRpc3RzX3JlbGF0aW9ucy5jc3YiKSkKICAKCmBgYAoKCmBgYHtyfQpnZXRfdG9wXzEwID0gZnVuY3Rpb24oYWxsX2FydGlzdHMpewoKICBhcnRzID0gYWxsX2FydGlzdHMkaWQgJT4lCiAgICBuYS5vbWl0KCkgJT4lCiAgICB1bmlxdWUoKQogIGFsbF90b3BfMTAgPSB0aWJibGUoInNvbmdfaWQiID0gY2hhcmFjdGVyKCksCiAgICAgICAgICAgICAgICAgICAgICAic29uZ19uYW1lIiA9IGNoYXJhY3RlcigpLAogICAgICAgICAgICAgICAgICAgICAgInNvbmdfcG9wdWxhcml0eSIgPSBudW1lcmljKCksCiAgICAgICAgICAgICAgICAgICAgICAiYXJ0aXN0X2lkIiA9IG51bWVyaWMoKSkKICBmb3IoYXJ0IGluIGFydHMpewogICAgdG9wXzEwID0gc3BvdGlmeXI6OmdldF9hcnRpc3RfdG9wX3RyYWNrcyhhcnQpCiAgICBpZihsZW5ndGgodG9wXzEwKT4wKXsKICAgICAgdG9wXzEwID0gdG9wXzEwICU+JQogICAgICAgIHNlbGVjdChpZCxuYW1lLHBvcHVsYXJpdHkpICU+JQogICAgICAgIHJlbmFtZShzb25nX2lkID0gaWQsc29uZ19uYW1lID0gbmFtZSwgc29uZ19wb3B1bGFyaXR5ID0gcG9wdWxhcml0eSkKICAgICAgdG9wXzEwJGFydGlzdF9pZCA9IGFydAogICAgfQogICAgZWxzZXsKICAgICAgdG9wXzEwID0gdGliYmxlKCJzb25nX2lkIiA9IE5BLAogICAgICAgICAgICAgICAgICAgICAgInNvbmdfbmFtZSIgPSBOQSwKICAgICAgICAgICAgICAgICAgICAgICJzb25nX3BvcHVsYXJpdHkiID0gTkEsCiAgICAgICAgICAgICAgICAgICAgICAiYXJ0aXN0X2lkIiA9IGFydCkKICAgIH0KICAgIAogICAgCiAgICBhbGxfdG9wXzEwID0gcmJpbmQoYWxsX3RvcF8xMCx0b3BfMTApCiAgfQogIHJldHVybihhbGxfdG9wXzEwKQp9CgpgYGAKCgpgYGB7cn0KdG9wXzEwID0gZ2V0X3RvcF8xMChhbGxfYXJ0aXN0cykKCmBgYAoKCmBgYHtyfQpzb25nX2ZlYXQgPSBmdW5jdGlvbih0b3BfMTApewogIHNvbmdfZmVhdHVyZXMgPSB0aWJibGUoKQogIGZvcihpZCBpbiB0b3BfMTAkc29uZ19pZCl7CiAgICBpZighaXMubmEoaWQpKXsKICAgICAgc29uZyA9IHNwb3RpZnlyOjpnZXRfdHJhY2tfYXVkaW9fZmVhdHVyZXMoaWQpICU+JQogICAgICAgIHNlbGVjdCgtdHlwZSwtaWQsLXVyaSwgLXRyYWNrX2hyZWYsIC1hbmFseXNpc191cmwsIC10aW1lX3NpZ25hdHVyZSkgCiAgICB9ZWxzZXsKICAgICAgc29uZyA9IHJlcChOQSwxMikKICAgIH0KICAgIHNvbmdfZmVhdHVyZXMgPSByYmluZChzb25nX2ZlYXR1cmVzLHNvbmcpCiAgICAKICB9CiAgdG9wXzEwX3NvbmdzID0gY2JpbmQodG9wXzEwLHNvbmdfZmVhdHVyZXMpCiAgcmV0dXJuKHRvcF8xMF9zb25ncykKICAKfQoKYGBgCgpgYGB7cn0KI3NldHdkKCIuLiIpCiN3ZCA9IGdldHdkKCkKdG9wXzEwX3dfZmVhdHMgPSBzb25nX2ZlYXQodG9wXzEwKSAjJT4lCiAgI3dyaXRlX2NzdihwYXN0ZTAod2QsIi9kYXRhL2FydGlzdHNfdG9wXzEwX3NvbmdzLmNzdiIpKQoKICAKYGBgCgpgYGB7cn0KYXJ0aXN0X2FsbF9zb25ncyA9IGZ1bmN0aW9uKGFydGlzdF9pZCl7CiAgYXJ0aXN0X3NvbmdzID0gdHJ5KGdldF9hcnRpc3RfYXVkaW9fZmVhdHVyZXMoYXJ0aXN0X2lkKSxUUlVFKQogIGlmIChpcy5jaGFyYWN0ZXIoYXJ0aXN0X3NvbmdzKSl7CiAgICBhcnRpc3Rfc29uZ3MgPSBjKCIiKQogIH1lbHNlewogIGFydGlzdF9zb25ncyA9IGFydGlzdF9zb25ncyAlPiUKICAgIHNlbGVjdChhcnRpc3RzKSAlPiUKICAgIHVubmVzdChjb2xzID0gYyhhcnRpc3RzKSkgJT4lCiAgICBzZWxlY3QobmFtZSkKICB9CiAgcmV0dXJuKGFydGlzdF9zb25ncykKfQoKY29sbGFib3JhdGlvbiA9IGZ1bmN0aW9uKGFsbF9hcnRpc3RzKXsKICBhbGxfYXJ0aXN0cyRjb2xsYWJvcmF0aW9ucyA9IDAKICBhcnRpc3RzID0gdW5pcXVlKGFsbF9hcnRpc3RzJHJlbGF0ZWRfaWQpCiAgZm9yKGFydCBpbiBhcnRpc3RzKXsKICAgIGNvbGFiX2FydGlzdHMgPSBhcnRpc3RfYWxsX3NvbmdzKGFydCkKICAgICAgCiAgICByZWxhdGVkX2FydHMgPSBhbGxfYXJ0aXN0cyRhcnRpc3RbYWxsX2FydGlzdHMkcmVsYXRlZF9pZCA9PSBhcnRdCiAgICAKICAgIGZvcihyZWwgaW4gcmVsYXRlZF9hcnRzKXsKICAgICAgYyA9IDAKICAgICAgYyA9IGxlbmd0aCh3aGljaChjb2xhYl9hcnRpc3RzID09IHJlbCkpCiAgICAgIGFsbF9hcnRpc3RzJGNvbGxhYm9yYXRpb25zW2FsbF9hcnRpc3RzJHJlbGF0ZWRfaWQgPT0gYXJ0ICYgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYWxsX2FydGlzdHMkYXJ0aXN0ID09IHJlbF0gPSBjCiAgICB9CiAgICAgIAogIH0KICAKICByZXR1cm4oYWxsX2FydGlzdHMpCn0KYGBgCgoKYGBge3J9CnNldHdkKCIuLiIpCndkID0gZ2V0d2QoKQpjb2xhYnMgPSBjb2xsYWJvcmF0aW9uKGFsbF9hcnRpc3RzKSAlPiUKICB3cml0ZV9jc3YocGFzdGUwKHdkLCIvZGF0YS9hcnRpc3RzX3JlbGF0aW9ucy5jc3YiKSkKYGBgCgoKCmBgYHtyfQpnZXRfc3BvdGlmeV9kYXRhID0gZnVuY3Rpb24oZ2VucmUsbGltaXQgPSA1MCl7CiAgc2V0d2QoIi4uIikKICB3ZCA9IGdldHdkKCkKICBhbGxfYXJ0aXN0X3JlbGF0aW9ucyA9IGFydGlzdF9yZWxhdGlvbnMoZ2VucmUsbGltaXQpCiAgYWxsX2FydGlzdHMgPSBjb2xsYWJvcmF0aW9uKGFsbF9hcnRpc3RfcmVsYXRpb25zKSAlPiUKICAgIHdyaXRlX2ZlYXRoZXIoImRhdGEvYXJ0aXN0c19yZWxhdGlvbnMuZmVhdGhlciIpCiAgdG9wXzEwX3NvbmdzID0gZ2V0X3RvcF8xMChhbGxfYXJ0aXN0c19yZWxhdGlvbnMpCiAgdG9wXzEwX3dfZmVhdHMgPSBzb25nX2ZlYXQodG9wXzEwX3NvbmdzKSAlPiUKICAgIHdyaXRlX2ZlYXRoZXIocGFzdGUwKHdkLCIvZGF0YS9zb25nc193X2ZlYXR1cmVzLmZlYXRoZXIiKSkKICAKICAKfQpnZXRfc3BvdGlmeV9kYXRhKCJyYXAiLDIpCgpgYGAKCmBgYHtyfQpzZXR3ZCgiLi4iKQp3ZCA9IGdldHdkKCkKYXJ0cyA9IHJlYWRfZmVhdGhlcihwYXN0ZTAod2QsIi9kYXRhL2FydGlzdHNfcmVsYXRpb25zLmZlYXRoZXIiKSkKCgpgYGAKCmBgYHtyfQptYXgoYXJ0cyRjb2xsYWJvcmF0aW9ucykKbWluKGFydHMkY29sbGFib3JhdGlvbnMpCm1heChhcnRzJHBvcHVsYXJpdHkpCm1pbihhcnRzJHBvcHVsYXJpdHkpCgptMSA9IGMoKQpmb3IoaSBpbiAxOm5yb3coYXJ0cykpewogIGcgPSB1bmxpc3QoYXJ0cyRnZW5yZXNbaV0pCiAgbTEgPSBhcHBlbmQobTEsbGVuZ3RoKGcpKQp9Cm1heChtMSkKbWluKG0xKQpgYGAKCgoKCg==</div>
 
 
 
