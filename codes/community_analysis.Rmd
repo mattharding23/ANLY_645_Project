@@ -1,0 +1,693 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(arrow)
+'%!in%' <- function(x,y)!('%in%'(x,y))
+```
+
+
+
+```{r}
+setwd("..")
+partitions = read_csv("data/partitions.csv")%>%
+  pivot_longer(c(-"...1"),names_to = "whatever", values_to = "artist", values_drop_na = TRUE) %>%
+  select(-whatever) %>%
+  rename(community = "...1",)
+partitions$artist[363] = paste0("Royce Da 5'9",'"')
+#partitions[nrow(partitions) + 1] = c("Drake",4)
+#partitions[nrow(partitions) + 1] = c("Post Malone",4)
+#partitions[nrow(partitions) + 1] = c("Juice WRLD",4)
+
+
+```
+
+```{r}
+nodes_good = read_csv("Node_info_good_names.csv")
+nodes_bad = read_csv("Node_info_bad_names.csv")
+nodes_info =cbind(nodes_good,nodes_bad)
+nodes_info = nodes_info[,c(1,4)]
+colnames(nodes_info) = c("good","bad")
+
+for(i in 1:nrow(partitions)){
+  art = partitions$artist[i]
+  if(art %in% nodes_info$bad)
+    partitions$artist[i] = nodes_info$good[nodes_info$bad == art]
+}
+
+```
+```{r}
+setwd("..")
+artist_relation = arrow::read_feather("data/artists_relations.feather") %>%
+  left_join(partitions, by = c("artist"="artist")) %>%
+  na.omit
+temp = c()
+for(i in 1:nrow(partitions)){
+  x = artist_relation$id[artist_relation$artist == partitions$artist[i]]
+  if(length(x) < 1){
+    x = artist_relation$related_id[artist_relation$related_to == partitions$artist[i]]
+  }
+  if(!is.na(x[1]))
+    temp = append(temp,x[1])
+  else if(length(x)>1)
+    temp = append(temp,x[2])
+  else
+    temp = append(temp,NA)
+}
+partitions$artist_id = temp
+partitions$artist_id[partitions$artist == "Drake"] = "3TVXtAsR1Inumwj472S9r4"
+top_songs = arrow::read_feather("data/artists_top_10_songs.feather") %>%
+  left_join(partitions, by = c("artist_id" = "artist_id"))
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = artist_relation, aes(x = popularity,fill = as.factor(community))) + 
+  geom_histogram() +
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist Popularity by Community",
+    x = "Popularity",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 22, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 16),
+    axis.text = element_text(size = 10),
+    strip.text.x = element_text(size = 12),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/popularity.png", width = 15, height = 12, dpi = "retina")
+
+```
+
+
+```{r}
+setwd("..")
+ggplot(data = artist_relation, aes(x = followers,fill = as.factor(community))) + 
+  geom_histogram() +
+  facet_wrap(~community, nrow = 4, scales = "free") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist Popularity by Number of Followers",
+    x = "Followers",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 3.5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/followers.png", width = 15, height = 12, dpi = "retina")
+
+
+```
+
+```{r}
+genres = tibble("genre" = c(unlist(artist_relation$genres[1])[1],""),
+                "community" = c(artist_relation$community[1],0),
+                "count" = c(0,0))
+gs = c()
+for(i in 1:nrow(artist_relation)){
+  temp = unlist(artist_relation$genres[i])
+  com = artist_relation$community[i]
+  #if(com %!in% genres$community){
+    #genres[nrow(genres)+1,] = c(temp[1],com,0)
+    
+  #}
+  for(g in temp){
+    temp2 = genres %>%
+      filter(community == com)
+    if(g %!in% gs){
+      gs = append(gs,g)
+    }
+    if(g %in% temp2$genre){
+      genres$count[genres$genre == g & genres$community == com] = as.numeric(genres$count[genres$genre == g & genres$community == com]) + 1
+    }else{
+      genres$genre[nrow(genres)] = g
+      genres$community[nrow(genres)] = com
+      genres$count[nrow(genres)] = 1
+      genres = rbind(genres, c("",0,0))
+                   
+    }
+    
+  }
+  
+}
+```
+
+
+```{r}
+genre_cleaner = function(df){
+  
+  n = nrow(df)
+  for(i in 1:n){
+    g = df$genre[i]
+    if(!is.na(str_match(g,"trap")[1])){
+      df$genre[i] = "trap"
+    }else if(!is.na(str_match(g,"hip hop")[1])){
+      df$genre[i] = "hip hop"
+    }else if(!is.na(str_match(g,"pop")[1])){
+      df$genre[i] = "pop"
+    }else if(!is.na(str_match(g,"rap")[1])){
+      df$genre[i] = "rap"
+    }else if(!is.na(str_match(g,"contemporary")[1])){
+      df$genre[i] = "contemporary"
+    }else if(!is.na(str_match(g,"r&b")[1])){
+      df$genre[i] = "r&b"
+    }else if(!is.na(str_match(g,"house")[1])){
+      df$genre[i] = "house"
+    }
+  }
+  temp = tibble(genres = character(),
+                "community" = character(),
+                "count" = numeric() )
+  for(i in 1:11){
+    temp2 = df %>%
+      filter(community == i)
+    gens = unique(temp2$genre)
+    for(g in gens){
+      temp3 = temp2 %>%
+        filter(genre == g)
+      s = sum(as.numeric(temp3$count))
+      temp = rbind(temp,c(g,temp3$community[1],s))
+      }
+  }
+  cns = colnames(temp)
+  df = temp %>%
+    rename(genre = cns[1],
+           community = cns[2],
+           count = cns[3])
+  percs = c()
+  for(i in 1:nrow(df)){
+    temp = df %>%
+      filter(community == df$community[i])
+    p = as.numeric(df$count[i])/sum(as.numeric(temp$count))
+    percs = append(percs,p)
+  }
+  df$perc = percs
+  
+  return(df)
+}
+new_genres = genre_cleaner(genres)
+```
+
+
+
+```{r}
+setwd("..")
+ggplot(data = new_genres %>% filter(perc > .1), aes(x = genre,y = count, fill = community)) + 
+  geom_col() + 
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Genres Within Communities",
+    x = "Genre",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 20, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 14),
+    axis.text.y = element_text(size = 11),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 11),
+    strip.text.x = element_text(size = 14),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/genres_hist.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+songs_eda = top_songs %>%
+  select(-c("song_id","song_name","artist_id","artist")) %>%
+  na.omit()
+sum(is.na(songs_eda$community))
+```
+
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = song_popularity, fill = as.factor(community))) + 
+  geom_histogram() + 
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's song popularity",
+    x = "Popularity",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_popularity.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = danceability, fill = as.factor(community))) + 
+  geom_histogram() + 
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Dancability",
+    x = "Dancability",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_danceability.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = key, fill = as.factor(community))) + 
+  geom_histogram() + 
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Key",
+    x = "Key",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_key.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = loudness, fill = as.factor(community))) + 
+  geom_histogram() + 
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Loudness",
+    x = "Loudness",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_loudness.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = speechiness, fill = as.factor(community))) + 
+  geom_histogram() + 
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Speechiness",
+    x = "Speechiness",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 20, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 14),
+    axis.text.y = element_text(size = 11),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 11),
+    strip.text.x = element_text(size = 14),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_speechiness.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = acousticness, fill = as.factor(community))) + 
+  geom_histogram(bins = 20) + 
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Acousticness",
+    x = "Acousticness",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_acousticness.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = instrumentalness, fill = as.factor(community))) + 
+  geom_histogram(bins = 10) + 
+  facet_wrap(~community, nrow = 4, scales = "free") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Instrumentalness",
+    x = "Instrumentalness",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_instrumentalness.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = liveness, fill = as.factor(community))) + 
+  geom_histogram() + 
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Liveness",
+    x = "Liveness",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_liveness.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = valence, fill = as.factor(community))) + 
+  geom_histogram(bins = 10) + 
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Valence",
+    x = "Valence",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_valence.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = tempo, fill = as.factor(community))) + 
+  geom_histogram(bins = 10) + 
+  facet_wrap(~community, nrow = 4, scales = "free_y") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Tempo",
+    x = "Tempo",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 20, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 14),
+    axis.text.y = element_text(size = 11),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 11),
+    strip.text.x = element_text(size = 14),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_tempo.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = duration_ms, fill = as.factor(community))) + 
+  geom_histogram(bins = 10) + 
+  facet_wrap(~community, nrow = 4, scales = "free") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Duration",
+    x = "Duration",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_duration.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+setwd("..")
+ggplot(data = songs_eda, aes(x = energy, fill = as.factor(community))) + 
+  geom_histogram(bins = 10) + 
+  facet_wrap(~community, nrow = 4, scales = "free") +
+  scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist's Song Energy",
+    x = "Energy",
+    y = "Count"
+    ) +
+  theme(plot.title = element_text(
+    size = 14, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 8),
+    axis.text.y = element_text(size = 5),
+    axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=1,size = 5),
+    strip.text.x = element_text(size = 7),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/community_detection_eda/song_energy.png", width = 15, height = 12, dpi = "retina")
+
+
+
+```
+
+```{r}
+edges_good = read_csv("Edge_info_good_names.csv")
+en = edges_good$edge
+edges_good$e1 = ""
+edges_good$e2 = ""
+for(i in 1:length(en)){
+  e = en[i]
+  s = unlist(strsplit(e,"', '"))
+  s1 = unlist(strsplit(s[1],"'"))[2]
+  s2 = unlist(strsplit(s[2],"'"))[1]
+  edges_good$e1[i] = s1
+  edges_good$e2[i] = s2
+
+}
+es = tibble("edges" = append(edges_good$e1,edges_good$e2))
+ess = tibble("edges" = unique(es), "count" = rep(0,length(unique(es))))
+
+es = es %>%
+  count(edges)
+
+#for(i in 1:length(ess$edges)){
+  #temp = count(es == ess$edges[i])
+  #r = length(temp$edges)
+  #ess$count[i] = r
+#}
+
+new_edges = es %>%
+  left_join(artist_relation, by = c("edges" = "artist")) %>%
+  select(c("edges","n","popularity")) %>%
+  left_join(partitions, by = c("edges" = "artist")) %>%
+  select(c("edges","n","popularity","community")) %>%
+  unique() %>%
+  na.omit
+```
+
+```{r}
+setwd("..")
+ggplot(data = new_edges, aes(x = n, y = popularity)) + 
+  geom_point(aes(color = as.factor(community)),size = 2.5) + 
+  geom_smooth(color = "red", se = FALSE) + 
+  scale_color_brewer(type = "qual", palette = "Paired", name = "Community") +
+  labs(
+    title = "Artist Popularity vs Number of connections",
+    x = "Connections",
+    y = "Popularity"
+    ) +
+  theme(plot.title = element_text(
+    size = 22, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size =16),
+    axis.text.y = element_text(size = 12),
+    axis.text.x = element_text(size = 12),
+    legend.title = element_text(size = 16),
+    legend.text = element_text(size = 12),
+    legend.box.background = element_blank(),
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+ggsave("outputs/population_vs_connections.png", width = 15, height = 12, dpi = "retina")
+
+```
+
