@@ -28,7 +28,7 @@ partitions$artist[363] = paste0("Royce Da 5'9",'"')
 setwd("..")
 nodes = read_csv("data/Node_info.csv") %>%
   arrange(node)
-edges = read_csv("data/Edge_info.csv") 
+
 nodes_good = arrow::read_feather("data/artists_relations.feather") %>%
   select(artist,related_to)
 temp = nodes_good$artist
@@ -43,8 +43,28 @@ nodes_good = nodes_good[2:nrow(nodes_good),]
 ```
 
 ```{r}
-#nodes_good = read_csv("Node_info_good_names.csv")
-#nodes_bad = read_csv("Node_info_bad_names.csv")
+setwd("..")
+nodes$node[328] = "Royce Da 5\\"
+edges = read_csv("data/Edge_info.csv")
+edges = edges[-c(1438,1446,1457),]
+el = c()
+er = c()
+for(i in 1:nrow(edges)){
+  e = edges$edge[i]
+  e = unlist(str_split(e, "', '"))
+  el = append(el,unlist(str_split(e[1],"'"))[2])
+  er = append(er,unlist(str_split(e[2],"'"))[1])
+              
+}
+for(i in 1:length(er)){
+  el[i] = nodes_good$artist[nodes$node == el[i]]
+  er[i] = nodes_good$artist[nodes$node == er[i]]
+}
+
+```
+
+```{r}
+
 nodes_info =cbind(nodes_good,nodes)
 nodes_info = nodes_info[,c(1,4)]
 colnames(nodes_info) = c("good","bad")
@@ -557,7 +577,7 @@ ggsave("outputs/community_detection_eda/song_valence.png", width = 15, height = 
 ```{r}
 setwd("..")
 ggplot(data = songs_eda, aes(x = tempo, fill = as.factor(community))) + 
-  geom_histogram(bins = 10) + 
+  geom_histogram(bins = 30) + 
   facet_wrap(~community, nrow = 4, scales = "free_y") +
   scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
   labs(
@@ -684,11 +704,6 @@ new_edges = es %>%
   na.omit
 ```
 
-```{r}
-setwd("..")
-pop = arrow::read_feather("data/artists_relations.feather") %>%
-  
-```
 
 
 ```{r}
@@ -698,9 +713,9 @@ ggplot(data = new_edges, aes(x = n, y = popularity)) +
   geom_smooth(color = "red", se = FALSE) + 
   scale_color_brewer(type = "qual", palette = "Paired", name = "Community") +
   labs(
-    title = "Artist Popularity vs Number of connections",
-    x = "Connections",
-    y = "Popularity"
+    title = "Artist Popularity By Number of Connections",
+    x = "Number of Connections",
+    y = "Arist Popularity"
     ) +
   theme(plot.title = element_text(
     size = 22, # Enlarge & center title
