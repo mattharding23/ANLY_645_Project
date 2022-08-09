@@ -406,9 +406,9 @@ ggplot(data = songs_eda, aes(x = speechiness, fill = as.factor(community))) +
   facet_wrap(~community, nrow = 4, scales = "free_y") +
   scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
   labs(
-    title = "Artist's Song Speechiness",
+    title = "Song Speechiness Distribution by Community",
     x = "Speechiness",
-    y = "Count"
+    y = "Unique Songs by Artists"
     ) +
   theme(plot.title = element_text(
     size = 20, # Enlarge & center title
@@ -561,9 +561,9 @@ ggplot(data = songs_eda, aes(x = tempo, fill = as.factor(community))) +
   facet_wrap(~community, nrow = 4, scales = "free_y") +
   scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
   labs(
-    title = "Artist's Song Tempo",
+    title = "Song Tempo Distribution by Community",
     x = "Tempo",
-    y = "Count"
+    y = "Unique Songs by Artists"
     ) +
   theme(plot.title = element_text(
     size = 20, # Enlarge & center title
