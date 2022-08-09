@@ -12,8 +12,7 @@ library(arrow)
 
 
 ```{r}
-setwd("..")
-partitions = read_csv("data/partitions.csv")%>%
+partitions = read_csv("partitions.csv")%>%
   pivot_longer(c(-"...1"),names_to = "whatever", values_to = "artist", values_drop_na = TRUE) %>%
   select(-whatever) %>%
   rename(community = "...1",)
@@ -26,9 +25,27 @@ partitions$artist[363] = paste0("Royce Da 5'9",'"')
 ```
 
 ```{r}
-nodes_good = read_csv("Node_info_good_names.csv")
-nodes_bad = read_csv("Node_info_bad_names.csv")
-nodes_info =cbind(nodes_good,nodes_bad)
+setwd("..")
+nodes = read_csv("data/Node_info.csv") %>%
+  arrange(node)
+edges = read_csv("data/Edge_info.csv") 
+nodes_good = arrow::read_feather("data/artists_relations.feather") %>%
+  select(artist,related_to)
+temp = nodes_good$artist
+nodes_good = tibble(append(temp,nodes_good$related_to))
+colnames(nodes_good) = "artist"
+nodes_good = nodes_good %>%
+  unique() %>%
+  arrange(artist)
+nodes_good = nodes_good[2:nrow(nodes_good),]
+
+
+```
+
+```{r}
+#nodes_good = read_csv("Node_info_good_names.csv")
+#nodes_bad = read_csv("Node_info_bad_names.csv")
+nodes_info =cbind(nodes_good,nodes)
 nodes_info = nodes_info[,c(1,4)]
 colnames(nodes_info) = c("good","bad")
 
@@ -177,12 +194,14 @@ genre_cleaner = function(df){
       df$genre[i] = "r&b"
     }else if(!is.na(str_match(g,"house")[1])){
       df$genre[i] = "house"
+    }else if(!is.na(str_match(g,"plugg")[1])){
+      df$genre[i] = "trap"
     }
   }
   temp = tibble(genres = character(),
                 "community" = character(),
                 "count" = numeric() )
-  for(i in 1:11){
+  for(i in 0:10){
     temp2 = df %>%
       filter(community == i)
     gens = unique(temp2$genre)
@@ -216,14 +235,17 @@ new_genres = genre_cleaner(genres)
 
 ```{r}
 setwd("..")
-ggplot(data = new_genres %>% filter(perc > .1), aes(x = genre,y = count, fill = community)) + 
+new_genres$community = as.numeric(new_genres$community)
+new_genres$count = as.numeric(new_genres$count)
+
+ggplot(data = new_genres %>% filter(perc > .1), aes(x = genre,y = count, fill = as.factor(community))) + 
   geom_col() + 
   facet_wrap(~community, nrow = 4, scales = "free_y") +
   scale_fill_brewer(type = "qual", palette = "Paired", name = "Community") +
   labs(
-    title = "Genres Within Communities",
+    title = "Different Genres Within Communities",
     x = "Genre",
-    y = "Count"
+    y = "Arists in Genre"
     ) +
   theme(plot.title = element_text(
     size = 20, # Enlarge & center title
@@ -661,6 +683,13 @@ new_edges = es %>%
   unique() %>%
   na.omit
 ```
+
+```{r}
+setwd("..")
+pop = arrow::read_feather("data/artists_relations.feather") %>%
+  
+```
+
 
 ```{r}
 setwd("..")
