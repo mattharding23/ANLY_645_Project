@@ -16,7 +16,7 @@ dat = read_csv("centr_corr.csv")[,2:4]
 ```{r}
 setwd("..")
 pdf("outputs/centrality_correlations.pdf")
-ggpairs(dat, title = "Centrality Correlations", upper = list(continuous = wrap("cor", size = 9))) + 
+ggpairs(dat, title = "Artist Relation Network Centrality Correlations", upper = list(continuous = wrap("cor", size = 9))) + 
   theme(plot.title = element_text(
     size = 22, # Enlarge & center title
     margin = margin(10, 0, 10, 0), 
