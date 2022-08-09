@@ -3,17 +3,35 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
 ```{r}
-plot(cars)
+library(tidyverse)
+library(GGally)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+```{r}
+dat = read_csv("centr_corr.csv")[,2:4]
+```
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+```{r}
+setwd("..")
+pdf("outputs/centrality_correlations.pdf")
+ggpairs(dat, title = "Centrality Correlations", upper = list(continuous = wrap("cor", size = 9))) + 
+  theme(plot.title = element_text(
+    size = 22, # Enlarge & center title
+    margin = margin(10, 0, 10, 0), 
+    hjust = .5),
+    axis.title = element_text(size = 14),
+    axis.text = element_text(size = 14),
+    strip.text.x = element_text(size = 14),
+    strip.text.y = element_text(size = 14),
+    strip.background = element_blank(),
+    legend.position="none",
+    panel.grid.minor = element_line(color = "#D3D3D3", size = 0.2),
+    panel.grid.major = element_blank(),
+    panel.background = element_blank()
+  )
+dev.off()
+```
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
 
